@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Growth | Business Consulting &amp; Strategy Solutions</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Stackly Growth offers expert business consulting, strategy restructuring, digital transformation, marketing automation, and financial planning solutions.">
+  <meta name="keywords" content="Business consulting, Startup coaching, Strategic growth, Marketing consulting, Digital transformation">
+  <meta property="og:title" content="Stackly Growth | Business Consulting &amp; Strategy Solutions">
+  <meta property="og:description" content="Expert business consulting, strategy restructuring, digital transformation, marketing automation, and financial planning solutions.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    /* Home Page Specific Inline Customizations */
+    
+    /* 1. Hero Section Layout */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+      background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 10% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%);
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      background: rgba(37, 99, 235, 0.1);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: var(--radius-pill);
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-title span {
+      background: linear-gradient(135deg, var(--cyan), var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-gray-light);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    
+    .hero-stats-mini {
+      display: flex;
+      gap: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+    }
+    
+    .hero-stat-item h3 {
+      font-size: 1.75rem;
+      color: var(--cyan);
+      margin-bottom: 0.25rem;
+    }
+    
+    .hero-stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Hero Dashboard Illustration */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+    }
+    
+    .hero-dashboard-preview {
+      width: 100%;
+      max-width: 480px;
+      padding: 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .floating-card-metric {
+      position: absolute;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .f-card-1 {
+      top: -20px;
+      right: -20px;
+      animation: float 5s ease-in-out infinite;
+    }
+    
+    .f-card-2 {
+      bottom: -30px;
+      left: -20px;
+      animation: float-reverse 6s ease-in-out infinite;
+    }
+    
+    /* 2. Services section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .service-card {
+      padding: 2.5rem 2rem;
+      text-align: left;
+    }
+    
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: rgba(6, 182, 212, 0.08);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(6, 182, 212, 0.15);
+    }
+    
+    .service-card:nth-child(2) .service-icon { background: rgba(16, 185, 129, 0.08); color: var(--secondary); border-color: rgba(16, 185, 129, 0.15); }
+    .service-card:nth-child(3) .service-icon { background: rgba(37, 99, 235, 0.08); color: var(--primary); border-color: rgba(37, 99, 235, 0.15); }
+    
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card p {
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .service-link {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .service-link:hover {
+      gap: 0.5rem;
+    }
+
+    /* 3. Why Choose Us Grid */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .why-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    
+    .why-item {
+      display: flex;
+      gap: 1.25rem;
+    }
+    
+    .why-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      flex-shrink: 0;
+      border: var(--glass-border);
+    }
+    
+    .why-item-text h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+    }
+    
+    .why-item-text p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+
+    /* 4. Counters Stats Row */
+    .stats-section {
+      background: var(--bg-navy-light);
+      border-top: var(--glass-border);
+      border-bottom: var(--glass-border);
+      padding: 5rem 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .counter-value {
+      font-size: 3.5rem;
+      font-weight: 800;
+      font-family: var(--font-secondary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--text-white), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .counter-label {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* 5. Industries served */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .industry-card {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    
+    .industry-card svg {
+      color: var(--cyan);
+      margin-bottom: 1.25rem;
+    }
+    
+    .industry-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .industry-card p {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+
+    /* 6. Client Testimonials Slider */
+    .testimonials-carousel-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .testimonials-slider {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .stars {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+    }
+    
+    .testimonial-text {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--text-white);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    
+    .client-info h4 {
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 0.15rem;
+    }
+    
+    .client-info p {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+    
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .slider-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-navy-lighter);
+      border: var(--glass-border);
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .slider-arrow:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    
+    .slider-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .slider-dot.active {
+      background: var(--cyan);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* 7. Process Timeline */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+    
+    .process-timeline::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 12%;
+      right: 12%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 1;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .process-num {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--bg-navy-light);
+      border: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin: 0 auto 1.5rem auto;
+      transition: all var(--transition-normal);
+    }
+    
+    .process-step:hover .process-num {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-glow-blue);
+      transform: scale(1.1);
+    }
+    
+    .process-step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    /* 8. Pricing structures */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .pricing-card {
+      padding: 3rem 2.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-card.premium {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-glow-blue);
+      transform: scale(1.05);
+    }
+    
+    .pricing-card.premium:hover {
+      box-shadow: 0 0 35px var(--primary);
+    }
+    
+    .pricing-badge {
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: linear-gradient(135deg, var(--gold), #d97706);
+      color: var(--text-white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 2.5rem;
+      transform: rotate(45deg);
+    }
+    
+    .pricing-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-gray-light);
+      margin-bottom: 0.75rem;
+    }
+    
+    .pricing-cost {
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: var(--font-secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .pricing-cost span {
+      font-size: 1rem;
+      color: var(--text-gray);
+      font-weight: 400;
+    }
+    
+    .pricing-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .pricing-features li {
+      font-size: 0.95rem;
+      color: var(--text-gray-light);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .pricing-features li svg {
+      color: var(--secondary);
+      flex-shrink: 0;
+    }
+
+    /* 9. FAQ Section Drawers */
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .faq-item {
+      overflow: hidden;
+    }
+    
+    .faq-header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+    
+    .faq-header::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--cyan);
+      transition: transform var(--transition-normal);
+    }
+    
+    .faq-header.active::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+    
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-normal) ease-out;
+    }
+    
+    .faq-content {
+      padding: 0 2rem 1.5rem 2rem;
+      color: var(--text-gray);
+      font-size: 0.98rem;
+    }
+
+    /* 10. CTA glow layout */
+    .cta-banner {
+      padding: 5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+    
+    .cta-banner-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
+                  linear-gradient(135deg, rgba(6, 11, 26, 0.95), rgba(13, 21, 39, 0.95));
+      z-index: 1;
+    }
+    
+    .cta-banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cta-banner h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+    }
+    
+    .cta-banner p {
+      color: var(--text-gray-light);
+      margin-bottom: 2.25rem;
+      font-size: 1.1rem;
+    }
+    
+    /* Responsive overrides */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      
+      .hero-actions, .hero-stats-mini {
+        justify-content: center;
+      }
+      
+      .services-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pricing-card.premium {
+        transform: none;
+      }
+      
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .process-timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .process-timeline::after {
+        display: none;
+      }
+      
+      .industries-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .stats-grid, .process-timeline, .industries-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .hero-stats-mini {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .cta-banner {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        STACKLY<span>GROWTH</span>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-glass">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Toggle Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section (Asymmetrical Split Screen) -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <!-- Left Column Copy -->
+      <div class="hero-content reveal-left">
+        <div class="hero-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+          </svg>
+          Strategy &amp; Consulting
+        </div>
+        <h1 class="hero-title">Elevate Your Corporate <span>Growth Vector</span></h1>
+        <p class="hero-desc">
+          Stackly Growth provides data-backed strategy frameworks, digital scaling programs, and fundraising architecture to scale startups and optimize enterprise processes.
+        </p>
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+          <a href="404.html" class="btn btn-secondary">Learn More</a>
+        </div>
+        
+        <!-- Live KPI Badges -->
+        <div class="hero-stats-mini">
+          <div class="hero-stat-item">
+            <h3>500+</h3>
+            <p>Clients Advisory</p>
+          </div>
+          <div class="hero-stat-item">
+            <h3>98.2%</h3>
+            <p>Consultation Retainers</p>
+          </div>
+          <div class="hero-stat-item">
+            <h3>$45M</h3>
+            <p>Seed Assets Raised</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column Visual (Mock Dashboard Preview) -->
+      <div class="hero-visual reveal-right">
+        <!-- Background blob overlays -->
+        <div class="gradient-blob blob-cyan animate-blob-1" style="width: 350px; height: 350px; opacity: 0.25;"></div>
+        
+        <!-- Glassmorphism dashboard mockup -->
+        <div class="hero-dashboard-preview glass-panel" style="overflow: hidden; padding: 0.75rem; border-radius: var(--radius-md);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0.25rem 0.5rem 0.75rem 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+            <div style="font-weight:600; font-size:0.9rem;">Live ROI Performance Analytics</div>
+            <span style="font-size:0.75rem; color:var(--cyan); font-weight:700;">+25.4% Growth</span>
+          </div>
+          <img src="assets/hero_illustration.jpg" alt="Stackly ROI Performance Analytics" style="width: 100%; height: auto; border-radius: var(--radius-sm); display: block; filter: brightness(0.9) contrast(1.05);">
+        </div>
+
+        <!-- Floating Widgets -->
+        <div class="floating-card-metric f-card-1 glass-panel">
+          <div style="width: 10px; height: 10px; border-radius:50%; background: var(--secondary);"></div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--text-gray);">Consultant Sync</div>
+            <div style="font-size:0.85rem; font-weight:700;">Sarah J. Active</div>
+          </div>
+        </div>
+
+        <div class="floating-card-metric f-card-2 glass-panel">
+          <div style="width: 10px; height: 10px; border-radius:50%; background: var(--primary);"></div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--text-gray);">Revenue Generated</div>
+            <div style="font-size:0.85rem; font-weight:700;">$2.4M Verified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Business Growth Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Our Domains</span>
+        <h2 class="section-title">Grow at Scale</h2>
+        <p class="section-desc">We target business performance through key structural shifts, digital execution platforms, and operational efficiency auditing.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card glass-panel reveal-up">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Strategic Consulting</h3>
+          <p>Restructuring workflows, mapping market expansion targets, and designing enterprise framework architectures.</p>
+          <a href="404.html" class="service-link">
+            Explore Service
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card glass-panel reveal-up" style="animation-delay: 0.15s;">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Digital Transformation</h3>
+          <p>Unlocking legacy infrastructure hurdles by introducing automated tools, marketing funnels, and CRM operations.</p>
+          <a href="404.html" class="service-link">
+            Explore Service
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Financial Restructuring</h3>
+          <p>Valuation analysis, seed/series pitch construction, CAP table optimization, and cash flow audit forecasting.</p>
+          <a href="404.html" class="service-link">
+            Explore Service
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Why Choose Stackly Growth -->
+  <section style="background-color: var(--bg-navy-light);" id="why-us">
+    <div class="container why-grid">
+      <div class="reveal-left">
+        <span class="section-tag">Value Proposition</span>
+        <h2 class="section-title">Built for Enterprise Milestones</h2>
+        <p class="section-desc" style="margin-bottom: 2rem;">
+          Consulting shouldn't be limited to high level documents. We roll up our sleeves and implement the structural, technological, and capital restructuring modifications needed to scale.
+        </p>
+        <a href="404.html" class="btn btn-secondary">Get Free Performance Audit</a>
+      </div>
+      
+      <div class="why-content reveal-right">
+        <!-- Item 1 -->
+        <div class="why-item">
+          <div class="why-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="why-item-text">
+            <h3>Rapid Frame Implementation</h3>
+            <p>We deploy frameworks within 14 working days, establishing immediate operational baselines.</p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="why-item">
+          <div class="why-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+          </div>
+          <div class="why-item-text">
+            <h3>Omnichannel Digitization</h3>
+            <p>Our specialists set up automation APIs and pipelines for modern sales networks.</p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="why-item">
+          <div class="why-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="why-item-text">
+            <h3>Certified Growth Experts</h3>
+            <p>You work directly with specialists holding 10+ years of operational corporate consulting tenures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Success Statistics Section -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="reveal-up">
+        <div class="counter-value" data-target="520">0</div>
+        <div class="counter-label">Corporates Advised</div>
+      </div>
+      <div class="reveal-up" style="animation-delay: 0.1s;">
+        <div class="counter-value" data-target="98">0</div>
+        <div class="counter-label">Advisory Retention %</div>
+      </div>
+      <div class="reveal-up" style="animation-delay: 0.2s;">
+        <div class="counter-value" data-target="10">0</div>
+        <div class="counter-label">Average Client ROI Factor</div>
+      </div>
+      <div class="reveal-up" style="animation-delay: 0.3s;">
+        <div class="counter-value" data-target="45">0</div>
+        <div class="counter-label">Seed Millions Raised</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Industries We Serve -->
+  <section id="industries">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Sectors Covered</span>
+        <h2 class="section-title">Global Operational Reach</h2>
+        <p class="section-desc">We customize growth blueprints to fit the scaling demands of competitive fields.</p>
+      </div>
+
+      <div class="industries-grid">
+        <!-- Ind 1 -->
+        <div class="industry-card glass-panel reveal-up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+          <h3>SaaS &amp; Tech</h3>
+          <p>LTV enhancement, API frameworks, funnel setup, scale programs.</p>
+        </div>
+        <!-- Ind 2 -->
+        <div class="industry-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <h3>FinTech</h3>
+          <p>Compliance structures, merchant interfaces, capital management.</p>
+        </div>
+        <!-- Ind 3 -->
+        <div class="industry-card glass-panel reveal-up" style="animation-delay: 0.2s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <h3>Logistics</h3>
+          <p>Procurement automation, inventory tracking pipelines, scale metrics.</p>
+        </div>
+        <!-- Ind 4 -->
+        <div class="industry-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="5" r="3"></circle>
+            <line x1="12" y1="8" x2="12" y2="21"></line>
+            <path d="M17 11a5 5 0 0 1-10 0"></path>
+          </svg>
+          <h3>Healthcare</h3>
+          <p>Operations auditing, patient database structures, system upgrades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Client Success Stories -->
+  <section style="background-color: var(--bg-navy-light);" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Case Results</span>
+        <h2 class="section-title">Client Success Stories</h2>
+        <p class="section-desc">See how corporate leaders restructured operations under our guidance.</p>
+      </div>
+
+      <div class="testimonials-carousel-wrapper reveal-zoom">
+        <div class="testimonials-slider">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Stackly Growth completely automated our SaaS acquisition flow. In less than three quarters, our active client metrics increased by 140% while lowering acquisition spending by 35%."
+            </p>
+            <div class="client-info">
+              <h4>Alex Mercer</h4>
+              <p>CEO, TechScale Corporation</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The financial restructuring blueprint from Marcus Vance helped us construct a seed CAP structure that successfully raised $8.5M from premium VC firms within 90 days."
+            </p>
+            <div class="client-info">
+              <h4>Helena Carter</h4>
+              <p>CFO, GreenGrid Energy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-nav">
+          <button class="slider-arrow slider-prev" aria-label="Previous Slide">←</button>
+          <div class="slider-dots"></div>
+          <button class="slider-arrow slider-next" aria-label="Next Slide">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Business Process Timeline -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Our Workflow</span>
+        <h2 class="section-title">4-Step Growth Pipeline</h2>
+        <p class="section-desc">A methodical strategy path to unlock immediate operations efficiency.</p>
+      </div>
+
+      <div class="process-timeline reveal-up">
+        <!-- Step 1 -->
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <h3>Audit &amp; Discovery</h3>
+          <p>We analyze legacy tech boundaries, funnel performance, and capital assets metrics.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <h3>Model Restructuring</h3>
+          <p>We compile operational strategies, code automations, and custom growth playbooks.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <h3>Deployment</h3>
+          <p>We work directly alongside your internal teams to integrate platforms and processes.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <h3>Optimization</h3>
+          <p>Through monthly SLA checkups, we refine KPIs to maintain long term performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Pricing Plans -->
+  <section style="background-color: var(--bg-navy-light);" id="pricing">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Consulting Fees</span>
+        <h2 class="section-title">Transparent Advisory Plans</h2>
+        <p class="section-desc">Select a consulting alignment that scales alongside your performance goals.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card glass-panel reveal-up">
+          <h3 class="pricing-name">Startup Advisory</h3>
+          <div class="pricing-cost">$1,200 <span>/ mo</span></div>
+          <ul class="pricing-features">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Weekly 1-Hour Focus Session
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Pitch deck validation
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Standard SaaS funnel review
+            </li>
+          </ul>
+          <a href="404.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Choose Startup</a>
+        </div>
+        <!-- Plan 2 -->
+        <div class="pricing-card glass-panel premium reveal-up" style="animation-delay: 0.15s;">
+          <div class="pricing-badge">BEST VALUE</div>
+          <h3 class="pricing-name">Scale Blueprint</h3>
+          <div class="pricing-cost">$2,900 <span>/ mo</span></div>
+          <ul class="pricing-features">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Bi-Weekly Strategy Audits
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              API &amp; Digits implementation support
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              SLA Dashboard creation
+            </li>
+          </ul>
+          <a href="404.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Choose Scale</a>
+        </div>
+        <!-- Plan 3 -->
+        <div class="pricing-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+          <h3 class="pricing-name">Enterprise Strategy</h3>
+          <div class="pricing-cost">$5,500 <span>/ mo</span></div>
+          <ul class="pricing-features">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Unlimited Consultation Access
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              On-site Operations Redesign
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              SLA Priority Auditing
+            </li>
+          </ul>
+          <a href="404.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">Choose Enterprise</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Frequently Asked Questions -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">FAQ Helpdesk</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Find answers to quick operational queries regarding Stackly Growth Solutions.</p>
+      </div>
+
+      <div class="faq-wrapper reveal-zoom">
+        <!-- Item 1 -->
+        <div class="faq-item glass-panel">
+          <div class="faq-header">What is the average timeline for strategic implementation?</div>
+          <div class="faq-body">
+            <div class="faq-content">
+              Most clients experience immediate operational baseline shifts within the first 14 working days of deployment. Complete model restructuring and dashboard deployment take roughly 6 to 8 weeks depending on company complexity.
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="faq-item glass-panel">
+          <div class="faq-header">Does Stackly Growth assist in fundraising pitch designs?</div>
+          <div class="faq-body">
+            <div class="faq-content">
+              Yes, our capital advisory domain works directly with startup leadership teams to build pitch materials, clean up CAP structures, and model financial growth for series presentation.
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="faq-item glass-panel">
+          <div class="faq-header">How do you structure consulting SLAs?</div>
+          <div class="faq-body">
+            <div class="faq-content">
+              We define milestone performance guidelines, target conversion rates, and dashboard deployment schedules within our advisory contracts. Weekly/monthly checks verify that these SLA goals are met.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Premium Call-To-Action -->
+  <section style="padding-top: 2rem;">
+    <div class="container">
+      <div class="cta-banner reveal-zoom">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-content">
+          <h2>Ready to Target Peak Performance?</h2>
+          <p>Connect with a Stackly strategist today and get a free legacy tech auditing playbook.</p>
+          <a href="register.html" class="btn btn-green">Unlock Strategy Blueprint</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          STACKLY<span>GROWTH</span>
+        </div>
+        <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
+        <div class="footer-socials">
+          <a href="404.html" class="social-icon">Li</a>
+          <a href="404.html" class="social-icon">Tw</a>
+          <a href="404.html" class="social-icon">Yb</a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="404.html">Corporate Strategy</a></li>
+          <li><a href="404.html">Startup Consulting</a></li>
+          <li><a href="404.html">Tech Scaling</a></li>
+          <li><a href="404.html">Capital restructures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Team</a></li>
+          <li><a href="services.html">Methodology</a></li>
+          <li><a href="blog.html">Latest Insights</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3 class="footer-title">Strategy Insights</h3>
+        <p>Subscribe to our weekly corporate growth articles.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+          <input type="email" placeholder="Enter business email" required>
+          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly Growth Solutions. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

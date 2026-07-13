@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Stackly Growth</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Join Stackly Growth to unlock digital transformation, strategy growth models, analytics consulting, and startup consulting solutions.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <div class="auth-section">
+    <!-- Ambient Blur Backgrounds -->
+    <div class="auth-bg-shapes">
+      <div class="auth-blob auth-blob-1"></div>
+      <div class="auth-blob auth-blob-2"></div>
+    </div>
+
+    <div class="auth-wrapper">
+      <div class="auth-card glass-panel reveal-zoom">
+        <div class="auth-header">
+          <div class="logo auth-logo">
+            <div class="logo-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            STACKLY<span>GROWTH</span>
+          </div>
+          <h1 class="auth-title">Get Started Today</h1>
+          <p class="auth-subtitle">Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
+
+        <form id="register-form" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="reg-name" class="form-label">Full Name</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input type="text" id="reg-name" class="form-input" placeholder="e.g. John Doe" maxlength="20" required>
+            </div>
+            <div class="error-msg" id="name-error"></div>
+          </div>
+
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="reg-email" class="form-label">Email Address</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="email" id="reg-email" class="form-input" placeholder="e.g. john@company.com" required>
+            </div>
+            <div class="error-msg" id="email-error"></div>
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="form-group">
+            <label for="reg-mobile" class="form-label">Mobile Number</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <input type="tel" id="reg-mobile" class="form-input" placeholder="10-digit number" required>
+            </div>
+            <div class="error-msg" id="mobile-error"></div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="reg-password" class="form-label">Password</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <input type="password" id="reg-password" class="form-input" placeholder="Create strong password" required>
+              <button type="button" class="eye-toggle" aria-label="Toggle Password Visibility">
+                <span class="eye-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <!-- Strength Meter -->
+            <div class="password-strength-container">
+              <div class="strength-meter" id="password-strength">
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+              </div>
+              <span class="strength-text" id="strength-label"></span>
+            </div>
+            <div class="error-msg" id="password-error"></div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="reg-confirm-password" class="form-label">Confirm Password</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <input type="password" id="reg-confirm-password" class="form-input" placeholder="Repeat password" required>
+              <button type="button" class="eye-toggle" aria-label="Toggle Password Visibility">
+                <span class="eye-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div class="error-msg" id="confirm-password-error"></div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-group" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <label class="checkbox-label">
+              <input type="checkbox" id="reg-terms" required>
+              <span>I agree to the <a href="404.html" style="color: var(--cyan);">Terms &amp; Conditions</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem;">
+            Create Account
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

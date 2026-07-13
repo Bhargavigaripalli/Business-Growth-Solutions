@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Stackly Growth</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="The page you are looking for does not exist. Return to Stackly Growth for business consulting, startup strategy, and marketing solutions.">
+  <meta property="og:title" content="404 - Page Not Found | Stackly Growth">
+  <meta property="og:description" content="Return to Stackly Growth for business consulting, startup strategy, and marketing solutions.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    .error-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-navy);
+      padding: 2rem;
+    }
+    
+    .error-container {
+      text-align: center;
+      max-width: 580px;
+      padding: 4rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .error-code {
+      font-size: 8.5rem;
+      font-weight: 800;
+      line-height: 1;
+      font-family: var(--font-secondary);
+      background: linear-gradient(135deg, var(--cyan), var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+      position: relative;
+      letter-spacing: -0.05em;
+      filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.3));
+    }
+    
+    .error-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .error-message {
+      color: var(--text-gray);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+    
+    .floating-icons-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .floating-shape {
+      position: absolute;
+      opacity: 0.12;
+    }
+    
+    .shape-1 {
+      top: 15%;
+      left: 10%;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape-2 {
+      bottom: 20%;
+      right: 12%;
+      animation: float-reverse 8s ease-in-out infinite;
+    }
+    
+    .shape-3 {
+      top: 50%;
+      right: 25%;
+      animation: float 7s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <div class="error-wrapper">
+    <!-- Morphing Ambient Gradients -->
+    <div class="gradient-blob animate-blob-1" style="top: 10%; left: 15%;"></div>
+    <div class="gradient-blob blob-cyan animate-blob-2" style="bottom: 10%; right: 15%;"></div>
+    
+    <!-- Floating Graphics -->
+    <div class="floating-icons-container">
+      <div class="floating-shape shape-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+      </div>
+      <div class="floating-shape shape-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+      </div>
+      <div class="floating-shape shape-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Error Card -->
+    <div class="error-container glass-panel reveal-zoom">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Strategy Out of Bounds</h1>
+      <p class="error-message">
+        The page you are looking for has been moved, deleted, or did not exist. Let's return to safe growth metrics on our main hub.
+      </p>
+      <a href="index.html" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.25rem;">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

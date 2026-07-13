@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights &amp; Blog | Stackly Growth Solutions</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Read the latest corporate growth insights, SaaS scaling guides, seed fundraising tips, and market trend forecasts on the Stackly Growth blog.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    /* Blog Specific styles */
+    .blog-hero {
+      padding-top: 8rem;
+      padding-bottom: 3rem;
+      background: radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
+    }
+    
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    
+    .featured-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    
+    .featured-title {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .featured-desc {
+      color: var(--text-gray);
+      margin-bottom: 2rem;
+    }
+    
+    .featured-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-gray-dark);
+      margin-top: 1.5rem;
+    }
+    
+    .blog-filters {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1.5rem;
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.03);
+      border: var(--glass-border);
+      color: var(--text-gray);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--text-white);
+    }
+    
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .blog-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    
+    .blog-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    
+    .blog-card p {
+      font-size: 0.92rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    
+    .blog-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-gray-dark);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 1rem;
+    }
+    
+    @media (max-width: 992px) {
+      .featured-grid, .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        STACKLY<span>GROWTH</span>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-glass">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Toggle Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Blog Hero & Featured Articles Section -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="section-header reveal-up" style="text-align: left; margin-left: 0; margin-bottom: 4rem;">
+        <span class="section-tag">Insights Hub</span>
+        <h1 class="section-title">Knowledge Architecture</h1>
+        <p class="section-desc">Practical insights on startup pitching, enterprise workflows automation, and market expansion tactics.</p>
+      </div>
+
+      <!-- Featured Row -->
+      <div class="featured-grid glass-panel reveal-zoom" style="padding: 3rem;">
+        <div>
+          <span class="featured-badge">Featured Analysis</span>
+          <h2 class="featured-title">Optimizing Enterprise Workflows via API Pipelines</h2>
+          <p class="featured-desc">
+            We map out typical infrastructure hurdles, showing how connecting legacy local databases to modern CRM nodes cuts manual workflows overheads by 45%.
+          </p>
+          <a href="404.html" class="btn btn-primary">Read Case Audit</a>
+          <div class="featured-meta">
+            <span>By Sarah Jenkins</span>
+            <span>June 24, 2026</span>
+            <span>8 min read</span>
+          </div>
+        </div>
+        
+        <!-- Graphic / Blob placeholder -->
+        <div style="position: relative; display: flex; justify-content: center;">
+          <div class="gradient-blob blob-green animate-blob-1" style="width: 250px; height: 250px; opacity: 0.15;"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1" style="opacity: 0.4;">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Blog Grid & Category Filtering -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <!-- Tag Filters -->
+      <div class="blog-filters reveal-up">
+        <button class="filter-btn active">All Articles</button>
+        <button class="filter-btn">Business Tips</button>
+        <button class="filter-btn">Startup Guides</button>
+        <button class="filter-btn">Market Trends</button>
+        <button class="filter-btn">Leadership Insights</button>
+      </div>
+
+      <!-- Insights Grid -->
+      <div class="insights-grid">
+        <!-- Post 1: Business Tips -->
+        <div class="blog-card glass-panel reveal-up">
+          <span class="blog-card-tag">Business Tips</span>
+          <h3>Reducing Acquisition Overhead Velocities</h3>
+          <p>Analyzing the balance between outbound sequence structures and landing page conversion speeds to lower CAC.</p>
+          <div class="blog-card-meta">
+            <span>By Marcus Vance</span>
+            <span>June 18, 2026</span>
+          </div>
+        </div>
+
+        <!-- Post 2: Startup Guides -->
+        <div class="blog-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+          <span class="blog-card-tag">Startup Guides</span>
+          <h3>Formulating Q3 VC Valuation Models</h3>
+          <p>A step-by-step checklist to organize seed pitch documents, CAP tables equity formulas, and cash forecast metrics.</p>
+          <div class="blog-card-meta">
+            <span>By David Kross</span>
+            <span>June 14, 2026</span>
+          </div>
+        </div>
+
+        <!-- Post 3: Market Trends -->
+        <div class="blog-card glass-panel reveal-up" style="animation-delay: 0.2s;">
+          <span class="blog-card-tag">Market Trends</span>
+          <h3>The FinTech Compliance Shifts in 2026</h3>
+          <p>What the latest merchant account updates mean for cross-border SaaS companies scaling across European demographics.</p>
+          <div class="blog-card-meta">
+            <span>By Sarah Jenkins</span>
+            <span>June 08, 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          STACKLY<span>GROWTH</span>
+        </div>
+        <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
+        <div class="footer-socials">
+          <a href="404.html" class="social-icon">Li</a>
+          <a href="404.html" class="social-icon">Tw</a>
+          <a href="404.html" class="social-icon">Yb</a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="404.html">Corporate Strategy</a></li>
+          <li><a href="404.html">Startup Consulting</a></li>
+          <li><a href="404.html">Tech Scaling</a></li>
+          <li><a href="404.html">Capital restructures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Team</a></li>
+          <li><a href="services.html">Methodology</a></li>
+          <li><a href="blog.html">Latest Insights</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3 class="footer-title">Strategy Insights</h3>
+        <p>Subscribe to our weekly corporate growth articles.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+          <input type="email" placeholder="Enter business email" required>
+          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly Growth Solutions. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Stackly Growth Solutions</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Get in touch with Stackly Growth's strategic consulting team. Submit an inquiry, check working hours, or visit our office location.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    /* Contact Page Specific styles */
+    .contact-hero {
+      padding-top: 8rem;
+      padding-bottom: 3rem;
+      background: radial-gradient(circle at 10% 10%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .info-item {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(6, 182, 212, 0.08);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(6, 182, 212, 0.15);
+    }
+    
+    .info-text h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .info-text p {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+    }
+    
+    /* Map Placeholder */
+    .map-placeholder {
+      width: 100%;
+      height: 250px;
+      border-radius: var(--radius-md);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--bg-navy-light), var(--bg-navy-lighter));
+    }
+    
+    .map-grid-pattern {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),
+        radial-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 0);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      animation: bg-gradient-slide 20s infinite linear;
+    }
+    
+    .map-marker-pin {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .pin-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: var(--shadow-glow-blue);
+      animation: pulse-glow 2s infinite;
+    }
+    
+    .pin-label {
+      background: rgba(13, 21, 39, 0.9);
+      border: var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-white);
+      margin-top: 0.5rem;
+      backdrop-filter: var(--glass-blur);
+    }
+    
+    /* Contact Form styling */
+    .inquiry-card {
+      padding: 3rem 2.5rem;
+    }
+    
+    .form-group-flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .form-input-contact {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      color: var(--text-white);
+      font-family: var(--font-primary);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all var(--transition-normal);
+      margin-top: 0.5rem;
+    }
+    
+    .form-input-contact:focus {
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.1);
+    }
+    
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .form-group-flex {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        STACKLY<span>GROWTH</span>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-glass">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Toggle Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Hero header -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="section-header reveal-up" style="text-align: left; margin-left: 0; margin-bottom: 4rem;">
+        <span class="section-tag">Direct Line</span>
+        <h1 class="section-title">Initiate Consultation</h1>
+        <p class="section-desc">Connect with Stackly partners to establish frameworks targets, optimization strategies, and capital assets evaluations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Form & Detail columns -->
+  <section style="padding-top: 0;">
+    <div class="container contact-grid">
+      <!-- Left detail column -->
+      <div class="reveal-left">
+        <div class="info-list">
+          <!-- Office Location -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="info-text">
+              <h3>London Headquarters</h3>
+              <p>Level 24, Canary Wharf Highrise, London, E14 5AB</p>
+            </div>
+          </div>
+
+          <!-- Phone contact -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="info-text">
+              <h3>Phone Inquiries</h3>
+              <p>+44 (0) 20 7946 0958</p>
+            </div>
+          </div>
+
+          <!-- Working Hours -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="info-text">
+              <h3>Operational Hours</h3>
+              <p>Mon - Fri: 09:00 - 18:00 (GMT)<br>Sat - Sun: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock Map Placeholder -->
+        <div class="map-placeholder glass-panel">
+          <div class="map-grid-pattern"></div>
+          <div class="map-marker-pin">
+            <div class="pin-circle"></div>
+            <div class="pin-label">Stackly London HQ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Column -->
+      <div class="inquiry-card glass-panel reveal-right">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Business Inquiry</h2>
+        <form onsubmit="event.preventDefault(); alert('Inquiry submitted! Our strategy director will connect within 24 working hours.'); this.reset();">
+          <div class="form-group-flex">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input-contact" placeholder="e.g. Alex Mercer" required>
+            </div>
+            <!-- Company -->
+            <div class="form-group">
+              <label class="form-label">Corporate Entity</label>
+              <input type="text" class="form-input-contact" placeholder="e.g. Fintech Synergy" required>
+            </div>
+          </div>
+
+          <div class="form-group-flex">
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label">Business Email</label>
+              <input type="email" class="form-input-contact" placeholder="e.g. name@company.com" required>
+            </div>
+            <!-- Phone -->
+            <div class="form-group">
+              <label class="form-label">Contact Number</label>
+              <input type="tel" class="form-input-contact" placeholder="e.g. +44 20 ..." required>
+            </div>
+          </div>
+
+          <!-- Select Budget -->
+          <div class="form-group">
+            <label class="form-label">Strategic Budget Alignment</label>
+            <div class="select-wrapper" style="margin-top: 0.5rem;">
+              <select class="form-input-contact select-input" style="padding-left: 1.25rem;">
+                <option>$1,000 - $3,000 / month</option>
+                <option>$3,000 - $5,000 / month</option>
+                <option>$5,000+ / month</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group" style="margin-bottom: 2rem;">
+            <label class="form-label">Brief Operational Challenge Description</label>
+            <textarea class="form-input-contact" rows="4" placeholder="Explain your target milestones or bottlenecks..." style="resize: none;" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            Submit Strategic Request
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          STACKLY<span>GROWTH</span>
+        </div>
+        <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
+        <div class="footer-socials">
+          <a href="404.html" class="social-icon">Li</a>
+          <a href="404.html" class="social-icon">Tw</a>
+          <a href="404.html" class="social-icon">Yb</a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="404.html">Corporate Strategy</a></li>
+          <li><a href="404.html">Startup Consulting</a></li>
+          <li><a href="404.html">Tech Scaling</a></li>
+          <li><a href="404.html">Capital restructures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Team</a></li>
+          <li><a href="services.html">Methodology</a></li>
+          <li><a href="blog.html">Latest Insights</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3 class="footer-title">Strategy Insights</h3>
+        <p>Subscribe to our weekly corporate growth articles.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+          <input type="email" placeholder="Enter business email" required>
+          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly Growth Solutions. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

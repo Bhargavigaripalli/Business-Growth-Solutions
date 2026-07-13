@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Stackly Growth Solutions</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Discover Stackly Growth's company story, vision, mission, leadership team, core business values, and awards. Meet our expert consultants.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    /* About Page Specific Styles */
+    .about-hero {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 40%);
+    }
+    
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .value-card {
+      padding: 2.25rem 1.75rem;
+    }
+    
+    .value-card svg {
+      color: var(--cyan);
+      margin-bottom: 1.25rem;
+    }
+    
+    .value-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .value-card p {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .team-card {
+      padding: 2.5rem 1.75rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .team-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin: 0 auto 1.5rem auto;
+      border: 3px solid rgba(255, 255, 255, 0.08);
+      transition: all var(--transition-normal);
+    }
+    
+    .team-card:hover .team-avatar {
+      transform: scale(1.08);
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-glow-blue);
+    }
+    
+    .team-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    
+    .team-role {
+      font-size: 0.85rem;
+      color: var(--cyan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    
+    .team-bio {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    .team-socials {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .journey-timeline-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .journey-timeline-vertical::before {
+      content: '';
+      position: absolute;
+      left: 31px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .journey-node {
+      display: flex;
+      gap: 2.5rem;
+      position: relative;
+    }
+    
+    .journey-node-marker {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-navy-light);
+      border: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--cyan);
+      flex-shrink: 0;
+      z-index: 2;
+    }
+    
+    .journey-node:hover .journey-node-marker {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-glow-blue);
+    }
+    
+    .journey-node-content {
+      padding-top: 0.75rem;
+    }
+    
+    .journey-node-content h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .journey-node-content p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .story-grid, .team-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .journey-node {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .journey-timeline-vertical::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        STACKLY<span>GROWTH</span>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-glass">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Toggle Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Hero / Company Story Section -->
+  <section class="about-hero">
+    <div class="container story-grid">
+      <div class="reveal-left">
+        <span class="section-tag">About The Agency</span>
+        <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Pioneering Modern Corporate Scaling</h1>
+        <p class="section-desc" style="margin-bottom: 1.5rem;">
+          Stackly Growth was founded in 2018 with a single objective: to replace outdated consulting brochures with interactive dashboards and implementation pipelines.
+        </p>
+        <p style="color: var(--text-gray); margin-bottom: 2rem;">
+          We bridge the gap between financial forecasts and operational engineering, helping management teams design campaigns, configure CRM tools, and present pitches with confidence.
+        </p>
+        <a href="register.html" class="btn btn-primary">Build Your Strategy</a>
+      </div>
+      
+      <!-- Right Graphic -->
+      <div class="reveal-right" style="position: relative; display: flex; justify-content: center;">
+        <div class="gradient-blob blob-cyan animate-blob-1" style="width: 320px; height: 320px; opacity: 0.2;"></div>
+        <div class="glass-panel" style="padding: 3rem; max-width: 420px; text-align: center;">
+          <h3 style="font-size: 3rem; color: var(--cyan); line-height: 1; margin-bottom: 1rem;">8+ Years</h3>
+          <p style="font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--text-gray-light);">Of Consulting Excellence Across International Frontiers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Vision & Mission -->
+  <section style="background-color: var(--bg-navy-light);">
+    <div class="container story-grid">
+      <div class="glass-panel reveal-left" style="padding: 3rem 2.5rem;">
+        <h2 style="font-size: 1.75rem; margin-bottom: 1.25rem; color: var(--cyan);">Our Corporate Vision</h2>
+        <p style="color: var(--text-gray-light);">
+          To establish a transparent, automated consulting ecosystem where business growth is treated as a science, backed by real time statistics charts, predictive metrics models, and custom APIs.
+        </p>
+      </div>
+      <div class="glass-panel reveal-right" style="padding: 3rem 2.5rem; border-color: var(--primary);">
+        <h2 style="font-size: 1.75rem; margin-bottom: 1.25rem; color: var(--secondary);">Our Operational Mission</h2>
+        <p style="color: var(--text-gray-light);">
+          To work directly alongside enterprise partners to restructure overheads, implement scalable automation playbooks, optimize conversion funnels, and raise early stage seed/series venture assets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Core Business Values -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Corporate Ethos</span>
+        <h2 class="section-title">Our Business Values</h2>
+        <p class="section-desc">The metrics we maintain when auditing partners.</p>
+      </div>
+
+      <div class="values-grid">
+        <!-- Value 1 -->
+        <div class="value-card glass-panel reveal-up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <h3>Performance First</h3>
+          <p>We reject simple PDFs. Every framework must produce measurable gains.</p>
+        </div>
+        <!-- Value 2 -->
+        <div class="value-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <h3>Full Transparency</h3>
+          <p>Clients see direct operations updates via dynamic dashboard widgets.</p>
+        </div>
+        <!-- Value 3 -->
+        <div class="value-card glass-panel reveal-up" style="animation-delay: 0.2s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+          </svg>
+          <h3>API Innovation</h3>
+          <p>We employ modern automation integrations to eliminate manual bottlenecks.</p>
+        </div>
+        <!-- Value 4 -->
+        <div class="value-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <h3>SLA Compliance</h3>
+          <p>We adhere to strict milestone targets defined in the consulting blueprint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Leadership Team -->
+  <section style="background-color: var(--bg-navy-light);" id="team">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Architects of Growth</span>
+        <h2 class="section-title">Leadership Team</h2>
+        <p class="section-desc">Meet the senior operators guiding Stackly Growth consulting services.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Team 1 -->
+        <div class="team-card glass-panel reveal-up">
+          <div class="team-avatar" style="overflow: hidden; padding: 0;">
+            <img src="assets/marcus_vance.jpg" alt="Marcus Vance" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 class="team-name">Marcus Vance</h3>
+          <div class="team-role">Managing Director</div>
+          <p class="team-bio">Formulates structural corporate transformations, scale frameworks, and capital strategies.</p>
+          <div class="team-socials">
+            <a href="404.html" class="social-icon" style="width:30px; height:30px; font-size:0.75rem;">Li</a>
+            <a href="404.html" class="social-icon" style="width:30px; height:30px; font-size:0.75rem;">Tw</a>
+          </div>
+        </div>
+        <!-- Team 2 -->
+        <div class="team-card glass-panel reveal-up" style="animation-delay: 0.15s;">
+          <div class="team-avatar" style="overflow: hidden; padding: 0;">
+            <img src="assets/sarah_jenkins.jpg" alt="Sarah Jenkins" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 class="team-name">Sarah Jenkins</h3>
+          <div class="team-role">Head of Digital Scaling</div>
+          <p class="team-bio">Manages omnichannel marketing automations, SaaS conversion paths, and dashboard integrations.</p>
+          <div class="team-socials">
+            <a href="404.html" class="social-icon" style="width:30px; height:30px; font-size:0.75rem;">Li</a>
+            <a href="404.html" class="social-icon" style="width:30px; height:30px; font-size:0.75rem;">Tw</a>
+          </div>
+        </div>
+        <!-- Team 3 -->
+        <div class="team-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+          <div class="team-avatar" style="overflow: hidden; padding: 0;">
+            <img src="assets/david_kross.jpg" alt="David Kross" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 class="team-name">David Kross</h3>
+          <div class="team-role">Lead Capital Adviser</div>
+          <p class="team-bio">Advises on seed/series valuations, VC pitch decks, CAP optimizations, and exit projections.</p>
+          <div class="team-socials">
+            <a href="404.html" class="social-icon" style="width:30px; height:30px; font-size:0.75rem;">Li</a>
+            <a href="404.html" class="social-icon" style="width:30px; height:30px; font-size:0.75rem;">Tw</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Growth Journey Timeline -->
+  <section id="journey">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Milestones</span>
+        <h2 class="section-title">Growth Journey</h2>
+        <p class="section-desc">Key moments that built our consulting authority.</p>
+      </div>
+
+      <div class="journey-timeline-vertical">
+        <!-- Node 1 -->
+        <div class="journey-node reveal-up">
+          <div class="journey-node-marker">2018</div>
+          <div class="journey-node-content">
+            <h3>Agency Launch</h3>
+            <p>Stackly Growth starts operations in London, specializing in local tech startup models.</p>
+          </div>
+        </div>
+        <!-- Node 2 -->
+        <div class="journey-node reveal-up">
+          <div class="journey-node-marker">2021</div>
+          <div class="journey-node-content">
+            <h3>Digital Integrations Framework</h3>
+            <p>We expand consulting features to include API automation templates and client dashboards.</p>
+          </div>
+        </div>
+        <!-- Node 3 -->
+        <div class="journey-node reveal-up">
+          <div class="journey-node-marker">2024</div>
+          <div class="journey-node-content">
+            <h3>$45M Capital Raised Milestone</h3>
+            <p>Our capital restructuring blueprints cross $45M in client fundraising transactions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          STACKLY<span>GROWTH</span>
+        </div>
+        <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
+        <div class="footer-socials">
+          <a href="404.html" class="social-icon">Li</a>
+          <a href="404.html" class="social-icon">Tw</a>
+          <a href="404.html" class="social-icon">Yb</a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="404.html">Corporate Strategy</a></li>
+          <li><a href="404.html">Startup Consulting</a></li>
+          <li><a href="404.html">Tech Scaling</a></li>
+          <li><a href="404.html">Capital restructures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Team</a></li>
+          <li><a href="services.html">Methodology</a></li>
+          <li><a href="blog.html">Latest Insights</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3 class="footer-title">Strategy Insights</h3>
+        <p>Subscribe to our weekly corporate growth articles.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+          <input type="email" placeholder="Enter business email" required>
+          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly Growth Solutions. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

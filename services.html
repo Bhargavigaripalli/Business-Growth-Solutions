@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Stackly Growth Solutions</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Explore Stackly Growth's consulting services: business strategy, startup consulting, digital marketing, business analytics, financial planning, branding.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    /* Services Page Custom Styles */
+    .services-hero {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      background: radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.06) 0%, transparent 40%);
+    }
+    
+    .all-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .service-detail-card {
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-detail-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .service-detail-card h3 svg {
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+    
+    .service-detail-card p {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    
+    .service-bullets {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .service-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-gray-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .service-bullets li svg {
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 992px) {
+      .all-services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .all-services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        STACKLY<span>GROWTH</span>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-glass">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </nav>
+      
+      <button class="hamburger" aria-label="Toggle Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Services Intro Hero -->
+  <section class="services-hero">
+    <div class="container">
+      <div class="section-header reveal-up" style="margin-bottom: 0;">
+        <span class="section-tag">Methodology &amp; Domains</span>
+        <h1 class="section-title">Consulting Capabilites</h1>
+        <p class="section-desc">Explore our specialized advisory features built to address organizational friction, tech deficits, and funding requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Services Grid (9 services total) -->
+  <section style="padding-top: 2rem;">
+    <div class="container all-services-grid">
+      <!-- Service 1: Business Strategy -->
+      <div class="service-detail-card glass-panel reveal-up">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          Business Strategy
+        </h3>
+        <p>Designing workflows, restructuring corporate blueprints, and identifying adjacent market expansions.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Strategic Roadmap Development</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Competitor Gap Auditing</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Strategy</a>
+      </div>
+
+      <!-- Service 2: Startup Consulting -->
+      <div class="service-detail-card glass-panel reveal-up" style="animation-delay: 0.05s;">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+          </svg>
+          Startup Consulting
+        </h3>
+        <p>Helping founders structure early valuations, prepare seed pitches, and launch models.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Pitch Deck Construction</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Go-To-Market Blueprinting</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Startup</a>
+      </div>
+
+      <!-- Service 3: Digital Marketing -->
+      <div class="service-detail-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          Digital Marketing
+        </h3>
+        <p>Optimizing traffic acquisition pipelines, building landing copy, and configuring retargeting tags.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Acquisition Funnel Setup</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Conversion Optimization</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Marketing</a>
+      </div>
+
+      <!-- Service 4: Business Analytics -->
+      <div class="service-detail-card glass-panel reveal-up">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          Business Analytics
+        </h3>
+        <p>Deploying performance SLA dashboard portals to trace sales velocities, LTV, and CAC metrics.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Data Dashboard Integration</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> KPI Baseline Analysis</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Analytics</a>
+      </div>
+
+      <!-- Service 5: Financial Planning -->
+      <div class="service-detail-card glass-panel reveal-up" style="animation-delay: 0.05s;">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          Financial Planning
+        </h3>
+        <p>Modeling cash flows, capital requirements forecasting, and exit valuations templates.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Cash Flow Forecast Models</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Equity CAP Structuring</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Finance</a>
+      </div>
+
+      <!-- Service 6: Branding Solutions -->
+      <div class="service-detail-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Branding Solutions
+        </h3>
+        <p>Designing corporate identities, values decks, and product packaging specifications.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Brand Guideline Formulation</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Creative Direction &amp; Asset Packs</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Branding</a>
+      </div>
+
+      <!-- Service 7: Market Research -->
+      <div class="service-detail-card glass-panel reveal-up">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          Market Research
+        </h3>
+        <p>Conducting customer surveys, validation testing, and target demographic profiling.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Buyer Persona Validation</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Competitor Pricing Sweeps</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Research</a>
+      </div>
+
+      <!-- Service 8: Sales Optimization -->
+      <div class="service-detail-card glass-panel reveal-up" style="animation-delay: 0.05s;">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+          </svg>
+          Sales Optimization
+        </h3>
+        <p>Training outbound teams, configuring email sequencers, and script optimization.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> CRM Pipeline Restructuring</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Outbound Script Optimization</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Sales</a>
+      </div>
+
+      <!-- Service 9: Business Automation -->
+      <div class="service-detail-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Business Automation
+        </h3>
+        <p>Connecting legacy files databases to modern cloud interfaces through API triggers.</p>
+        <ul class="service-bullets">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zapier / Make API Pipelines</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Webhook Configurations</li>
+        </ul>
+        <a href="404.html" class="btn btn-secondary" style="margin-top: auto; justify-content: center;">Choose Automation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 6rem;">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          STACKLY<span>GROWTH</span>
+        </div>
+        <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
+        <div class="footer-socials">
+          <a href="404.html" class="social-icon">Li</a>
+          <a href="404.html" class="social-icon">Tw</a>
+          <a href="404.html" class="social-icon">Yb</a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="404.html">Corporate Strategy</a></li>
+          <li><a href="404.html">Startup Consulting</a></li>
+          <li><a href="404.html">Tech Scaling</a></li>
+          <li><a href="404.html">Capital restructures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Team</a></li>
+          <li><a href="services.html">Methodology</a></li>
+          <li><a href="blog.html">Latest Insights</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3 class="footer-title">Strategy Insights</h3>
+        <p>Subscribe to our weekly corporate growth articles.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+          <input type="email" placeholder="Enter business email" required>
+          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly Growth Solutions. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Stackly Growth</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Sign In to your Stackly Growth consulting dashboard. Manage analytics data, financial modeling, marketing metrics, and business strategy.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">STACKLY GROWTH</div>
+  </div>
+
+  <div class="auth-section">
+    <!-- Ambient Blur Backgrounds -->
+    <div class="auth-bg-shapes">
+      <div class="auth-blob auth-blob-1"></div>
+      <div class="auth-blob auth-blob-2"></div>
+    </div>
+
+    <div class="auth-wrapper">
+      <div class="auth-card glass-panel reveal-zoom">
+        <div class="auth-header">
+          <div class="logo auth-logo">
+            <div class="logo-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            STACKLY<span>GROWTH</span>
+          </div>
+          <h1 class="auth-title">Welcome Back</h1>
+          <p class="auth-subtitle">New to Stackly? <a href="register.html">Create an Account</a></p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <!-- Select Role -->
+          <div class="form-group">
+            <label for="login-role" class="form-label">Select Dashboard Role</label>
+            <div class="select-wrapper">
+              <select id="login-role" class="form-input select-input" style="padding-left: 1rem;">
+                <option value="User">Client User Dashboard</option>
+                <option value="Admin">Consultant Admin Dashboard</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="login-email" class="form-label">Email Address</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="email" id="login-email" class="form-input" placeholder="e.g. name@domain.com" required>
+            </div>
+            <div class="error-msg" id="email-error"></div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="login-password" class="form-label">Password</label>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <input type="password" id="login-password" class="form-input" placeholder="Enter password" required>
+              <button type="button" class="eye-toggle" aria-label="Toggle Password Visibility">
+                <span class="eye-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div class="error-msg" id="password-error"></div>
+          </div>
+
+          <!-- Login Options -->
+          <div class="auth-options">
+            <label class="checkbox-label">
+              <input type="checkbox" id="login-remember">
+              <span>Remember Me</span>
+            </label>
+            <a href="404.html" class="forgot-password">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem;">
+            Sign In
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
