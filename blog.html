@@ -240,7 +240,8 @@
       <!-- Insights Grid -->
       <div class="insights-grid">
         <!-- Post 1: Business Tips -->
-        <div class="blog-card glass-panel reveal-up">
+        <div class="blog-card glass-panel reveal-up" style="padding: 1.25rem;">
+          <img src="assets/blog_acquisition.jpg" alt="Acquisition Funnel Scaling" style="width: 100%; height: 170px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1.25rem; display: block;">
           <span class="blog-card-tag">Business Tips</span>
           <h3>Reducing Acquisition Overhead Velocities</h3>
           <p>Analyzing the balance between outbound sequence structures and landing page conversion speeds to lower CAC.</p>
@@ -251,7 +252,8 @@
         </div>
 
         <!-- Post 2: Startup Guides -->
-        <div class="blog-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+        <div class="blog-card glass-panel reveal-up" style="animation-delay: 0.1s; padding: 1.25rem;">
+          <img src="assets/blog_valuation.jpg" alt="VC Valuation Sheets" style="width: 100%; height: 170px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1.25rem; display: block;">
           <span class="blog-card-tag">Startup Guides</span>
           <h3>Formulating Q3 VC Valuation Models</h3>
           <p>A step-by-step checklist to organize seed pitch documents, CAP tables equity formulas, and cash forecast metrics.</p>
@@ -262,7 +264,8 @@
         </div>
 
         <!-- Post 3: Market Trends -->
-        <div class="blog-card glass-panel reveal-up" style="animation-delay: 0.2s;">
+        <div class="blog-card glass-panel reveal-up" style="animation-delay: 0.2s; padding: 1.25rem;">
+          <img src="assets/blog_fintech.jpg" alt="Fintech compliance nodes" style="width: 100%; height: 170px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1.25rem; display: block;">
           <span class="blog-card-tag">Market Trends</span>
           <h3>The FinTech Compliance Shifts in 2026</h3>
           <p>What the latest merchant account updates mean for cross-border SaaS companies scaling across European demographics.</p>
@@ -291,9 +294,25 @@
         </div>
         <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
         <div class="footer-socials">
-          <a href="404.html" class="social-icon">Li</a>
-          <a href="404.html" class="social-icon">Tw</a>
-          <a href="404.html" class="social-icon">Yb</a>
+          <a href="404.html" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="404.html" class="social-icon" aria-label="Twitter X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+            </svg>
+          </a>
+          <a href="404.html" class="social-icon" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+            </svg>
+          </a>
         </div>
       </div>
       
@@ -320,7 +339,7 @@
       <div class="footer-newsletter">
         <h3 class="footer-title">Strategy Insights</h3>
         <p>Subscribe to our weekly corporate growth articles.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+        <form class="newsletter-form" action="404.html" method="GET">
           <input type="email" placeholder="Enter business email" required>
           <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
         </form>

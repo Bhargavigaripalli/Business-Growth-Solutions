@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialSlider();
   initFaqAccordion();
   initSmoothScroll();
+  initHeroTyping();
+  initHeroParallax();
 });
 
 /* ==========================================
@@ -340,5 +342,85 @@ function initSmoothScroll() {
         }
       }
     });
+  });
+}
+
+/* ==========================================
+   11. Hero Text Typing & Word Rotator
+   ========================================== */
+function initHeroTyping() {
+  const textEl = document.getElementById('hero-dynamic-text');
+  if (!textEl) return;
+  const words = ['Growth Vector', 'Digital Scaling', 'Capital Restructure', 'Operations SLA'];
+  let wordIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+  let typeSpeed = 100;
+
+  function type() {
+    const currentWord = words[wordIdx];
+    if (isDeleting) {
+      textEl.textContent = currentWord.substring(0, charIdx - 1);
+      charIdx--;
+      typeSpeed = 50;
+    } else {
+      textEl.textContent = currentWord.substring(0, charIdx + 1);
+      charIdx++;
+      typeSpeed = 100;
+    }
+
+    if (!isDeleting && charIdx === currentWord.length) {
+      isDeleting = true;
+      typeSpeed = 2000;
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      wordIdx = (wordIdx + 1) % words.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+  type();
+}
+
+/* ==========================================
+   12. Hero Mouse Move Interactive Parallax
+   ========================================== */
+function initHeroParallax() {
+  const heroSection = document.getElementById('hero');
+  const fCard1 = document.querySelector('.f-card-1');
+  const fCard2 = document.querySelector('.f-card-2');
+  const preview = document.querySelector('.hero-dashboard-preview');
+  
+  if (!heroSection) return;
+  
+  // Set initial transitions for smooth rendering
+  if (fCard1) fCard1.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)';
+  if (fCard2) fCard2.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)';
+  if (preview) preview.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)';
+  
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    const moveX = (x / rect.width) * 35; 
+    const moveY = (y / rect.height) * 35;
+    
+    if (fCard1) {
+      fCard1.style.transform = `translate(${moveX * 1.1}px, ${moveY * 1.1}px)`;
+    }
+    if (fCard2) {
+      fCard2.style.transform = `translate(${-moveX * 1.3}px, ${-moveY * 1.3}px)`;
+    }
+    if (preview) {
+      preview.style.transform = `rotateY(${moveX * 0.25}deg) rotateX(${-moveY * 0.25}deg) translateY(${-moveY * 0.15}px)`;
+    }
+  });
+  
+  heroSection.addEventListener('mouseleave', () => {
+    if (fCard1) fCard1.style.transform = 'translate(0, 0)';
+    if (fCard2) fCard2.style.transform = 'translate(0, 0)';
+    if (preview) preview.style.transform = 'rotateY(0deg) rotateX(0deg) translateY(0px)';
   });
 }

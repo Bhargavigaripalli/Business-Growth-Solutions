@@ -9,6 +9,58 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/dashboards.css">
+  <style>
+    .dashboard-tab-content {
+      animation: fadeIn 0.4s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .detail-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .detail-title {
+      font-weight: 600;
+      color: #fff;
+    }
+    .subtext {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+    .milestone-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .milestone-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray-light);
+    }
+    .milestone-tag.done {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--emerald);
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +73,7 @@
   <div class="dashboard-layout">
     <!-- Left Sidebar -->
     <aside class="sidebar">
-      <div class="sidebar-logo">
+      <a href="index.html" class="sidebar-logo">
         <div class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -30,7 +82,7 @@
           </svg>
         </div>
         STACKLY<span>GROWTH</span>
-      </div>
+      </a>
       
       <nav class="sidebar-menu">
         <a href="#" class="sidebar-item active">
@@ -42,7 +94,7 @@
           </svg>
           Dashboard
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
@@ -51,13 +103,13 @@
           </svg>
           Clients
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
           </svg>
           Projects
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
             <polyline points="2 17 12 22 22 17"></polyline>
@@ -65,7 +117,7 @@
           </svg>
           Services
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="20" x2="18" y2="10"></line>
             <line x1="12" y1="20" x2="12" y2="4"></line>
@@ -73,21 +125,21 @@
           </svg>
           Analytics
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="12" y1="1" x2="12" y2="23"></line>
             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
           </svg>
           Revenue
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
           </svg>
           Team
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
@@ -96,7 +148,7 @@
           </svg>
           Reports
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -147,193 +199,472 @@
         </div>
       </div>
 
-      <!-- KPI Summary Row -->
-      <div class="kpi-grid">
-        <!-- KPI 1 -->
-        <div class="kpi-card glass-panel reveal-up">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
+      <!-- ==========================================
+           TAB 1: Dashboard Overview (Default)
+           ========================================== -->
+      <div id="tab-dashboard" class="dashboard-tab-content">
+        <!-- KPI Summary Row -->
+        <div class="kpi-grid">
+          <div class="kpi-card glass-panel reveal-up">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="kpi-value">$248,500</div>
+            <div class="kpi-label">Annual Portfolio Value</div>
+            <div class="kpi-trend trend-up">+12.4% vs last Q</div>
           </div>
-          <div class="kpi-value">$248,500</div>
-          <div class="kpi-label">Annual Portfolio Value</div>
-          <div class="kpi-trend trend-up">
-            <span>+12.4%</span> vs last Q
+          <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="kpi-value">124</div>
+            <div class="kpi-label">Clients Retained</div>
+            <div class="kpi-trend trend-up">98.2% retention rate</div>
           </div>
-        </div>
-        <!-- KPI 2 -->
-        <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.1s;">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-            </svg>
+          <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.2s;">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+              </svg>
+            </div>
+            <div class="kpi-value">15</div>
+            <div class="kpi-label">Active Strategy Frameworks</div>
+            <div class="kpi-trend trend-up">+2 templates added</div>
           </div>
-          <div class="kpi-value">124</div>
-          <div class="kpi-label">Clients Retained</div>
-          <div class="kpi-trend trend-up">
-            <span>98.2%</span> retention rate
-          </div>
-        </div>
-        <!-- KPI 3 -->
-        <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.2s;">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-            </svg>
-          </div>
-          <div class="kpi-value">15</div>
-          <div class="kpi-label">Active Strategy Frameworks</div>
-          <div class="kpi-trend trend-up">
-            <span>+2</span> templates added
-          </div>
-        </div>
-        <!-- KPI 4 -->
-        <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.3s;">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <div class="kpi-value">96.8%</div>
-          <div class="kpi-label">Project SLA Success</div>
-          <div class="kpi-trend trend-up">
-            <span>+0.5%</span> optimization
+          <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="kpi-value">96.8%</div>
+            <div class="kpi-label">Project SLA Success</div>
+            <div class="kpi-trend trend-up">+0.5% optimization</div>
           </div>
         </div>
-      </div>
 
-      <!-- Analytics Section Grid -->
-      <div class="analytics-grid">
-        <!-- SVG Revenue Chart -->
-        <div class="chart-card glass-panel reveal-left">
+        <!-- Charts Row -->
+        <div class="analytics-grid">
+          <div class="chart-card glass-panel">
+            <div class="card-header-flex">
+              <h2 class="card-title">Monthly Revenue Streams</h2>
+              <div style="font-size: 0.85rem; color: var(--text-gray);">Target vs Actual (USD)</div>
+            </div>
+            <div class="chart-container">
+              <svg class="svg-chart" viewBox="0 0 600 260">
+                <defs>
+                  <linearGradient id="bar-gradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--cyan)"></stop>
+                    <stop offset="100%" stop-color="var(--primary)"></stop>
+                  </linearGradient>
+                </defs>
+                <line x1="50" y1="50" x2="550" y2="50" class="chart-grid-line"></line>
+                <line x1="50" y1="110" x2="550" y2="110" class="chart-grid-line"></line>
+                <line x1="50" y1="170" x2="550" y2="170" class="chart-grid-line"></line>
+                <line x1="50" y1="230" x2="550" y2="230" class="chart-grid-line"></line>
+                <text x="75" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jan</text>
+                <text x="155" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Feb</text>
+                <text x="235" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Mar</text>
+                <text x="315" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Apr</text>
+                <text x="395" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">May</text>
+                <text x="475" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jun</text>
+                <path d="M 50 180 L 150 160 L 250 140 L 350 100 L 450 110 L 550 80" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5 5"></path>
+                <rect x="60" y="160" width="30" height="70" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="14K" data-month="Jan"></rect>
+                <rect x="140" y="130" width="30" height="100" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="20K" data-month="Feb"></rect>
+                <rect x="220" y="110" width="30" height="120" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="24K" data-month="Mar"></rect>
+                <rect x="300" y="80" width="30" height="150" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="30K" data-month="Apr"></rect>
+                <rect x="380" y="95" width="30" height="135" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="27K" data-month="May"></rect>
+                <rect x="460" y="60" width="30" height="170" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="34K" data-month="Jun"></rect>
+              </svg>
+            </div>
+          </div>
+          <div class="widget-card glass-panel">
+            <h2 class="card-title">Portfolio Performance</h2>
+            <div class="goals-list" style="margin-top: 1.5rem;">
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span class="goal-name">SaaS Strategy Revenue</span>
+                  <span class="goal-progress">95%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span class="goal-name">Seed Fundraising Consulting</span>
+                  <span class="goal-progress">75%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Row -->
+        <div class="table-card glass-panel">
           <div class="card-header-flex">
-            <h2 class="card-title">Monthly Revenue Streams</h2>
-            <div style="font-size: 0.85rem; color: var(--text-gray);">Target vs Actual (USD)</div>
+            <h2 class="card-title">Recent Active Projects Portfolio</h2>
           </div>
-          <div class="chart-container">
-            <svg class="svg-chart" viewBox="0 0 600 260">
-              <defs>
-                <linearGradient id="bar-gradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--cyan)"></stop>
-                  <stop offset="100%" stop-color="var(--primary)"></stop>
-                </linearGradient>
-              </defs>
-              <!-- Y Axis Lines -->
-              <line x1="50" y1="50" x2="550" y2="50" class="chart-grid-line"></line>
-              <line x1="50" y1="110" x2="550" y2="110" class="chart-grid-line"></line>
-              <line x1="50" y1="170" x2="550" y2="170" class="chart-grid-line"></line>
-              <line x1="50" y1="230" x2="550" y2="230" class="chart-grid-line"></line>
-              
-              <!-- Month labels -->
-              <text x="75" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jan</text>
-              <text x="155" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Feb</text>
-              <text x="235" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Mar</text>
-              <text x="315" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Apr</text>
-              <text x="395" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">May</text>
-              <text x="475" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jun</text>
-
-              <!-- Target line overlay (dotted) -->
-              <path d="M 50 180 L 150 160 L 250 140 L 350 100 L 450 110 L 550 80" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5 5"></path>
-
-              <!-- Monthly Columns -->
-              <rect x="60" y="160" width="30" height="70" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="14K" data-month="Jan"></rect>
-              <rect x="140" y="130" width="30" height="100" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="20K" data-month="Feb"></rect>
-              <rect x="220" y="110" width="30" height="120" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="24K" data-month="Mar"></rect>
-              <rect x="300" y="80" width="30" height="150" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="30K" data-month="Apr"></rect>
-              <rect x="380" y="95" width="30" height="135" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="27K" data-month="May"></rect>
-              <rect x="460" y="60" width="30" height="170" rx="3" class="chart-bar" fill="url(#bar-gradient)" data-value="34K" data-month="Jun"></rect>
-            </svg>
+          <div class="table-responsive">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Client Corporate Name</th>
+                  <th>Service Domain</th>
+                  <th>Assigned Consultant</th>
+                  <th>SLA Milestones</th>
+                  <th>Growth Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FinTech Synergy Corp</td>
+                  <td>Financial Restructuring</td>
+                  <td>Marcus Vance</td>
+                  <td>Phase 2 Delivery</td>
+                  <td><span class="status-badge status-progress">In Progress</span></td>
+                </tr>
+                <tr>
+                  <td>GreenEnergy Ventures</td>
+                  <td>Startup Pitching &amp; Valuation</td>
+                  <td>Sarah Jenkins</td>
+                  <td>Completed Funding Seed</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
+      </div>
 
-        <!-- Target metrics checklist / circular widget -->
-        <div class="widget-card glass-panel reveal-right">
-          <h2 class="card-title">Portfolio Performance</h2>
-          <div class="goals-list" style="margin-top: 1.5rem;">
-            <div class="goal-item">
-              <div class="goal-meta">
-                <span class="goal-name">SaaS Strategy Revenue</span>
-                <span class="goal-progress">95%</span>
+      <!-- ==========================================
+           TAB 2: Clients
+           ========================================== -->
+      <div id="tab-clients" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
+          <h2 class="card-title" style="margin-bottom:1.5rem;">Global Corporate Client Database</h2>
+          <div class="table-responsive">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Client Company</th>
+                  <th>Sector</th>
+                  <th>Primary Advisor</th>
+                  <th>Monthly MRR</th>
+                  <th>Onboarding Date</th>
+                  <th>Contact Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>FinTech Synergy Corp</strong></td>
+                  <td>Payment Gateways / Merchant Systems</td>
+                  <td>Marcus Vance</td>
+                  <td style="color: var(--cyan); font-weight:600;">$5,500</td>
+                  <td>January 10, 2026</td>
+                  <td class="subtext">operations@fintech-synergy.com</td>
+                </tr>
+                <tr>
+                  <td><strong>GreenEnergy Ventures</strong></td>
+                  <td>CleanTech Renewables</td>
+                  <td>David Kross</td>
+                  <td style="color: var(--cyan); font-weight:600;">$4,200</td>
+                  <td>March 14, 2026</td>
+                  <td class="subtext">board@greenenergy.co</td>
+                </tr>
+                <tr>
+                  <td><strong>Nova Commerce LLC</strong></td>
+                  <td>SaaS B2B Marketplaces</td>
+                  <td>Sarah Jenkins</td>
+                  <td style="color: var(--cyan); font-weight:600;">$2,900</td>
+                  <td>April 28, 2026</td>
+                  <td class="subtext">contact@nova-commerce.com</td>
+                </tr>
+                <tr>
+                  <td><strong>Apex Logistics Group</strong></td>
+                  <td>Supply Chain Logistics</td>
+                  <td>Marcus Vance</td>
+                  <td style="color: var(--cyan); font-weight:600;">$6,000</td>
+                  <td>June 02, 2026</td>
+                  <td class="subtext">billing@apex-logistics.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 3: Projects
+           ========================================== -->
+      <div id="tab-projects" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
+          <h2 class="card-title" style="margin-bottom:1.5rem;">SLA Projects Master Registry</h2>
+          
+          <div class="detail-list">
+            <!-- Project 1 -->
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title">Nova SaaS Funnel Optimization</span>
+                <span class="status-badge status-progress">In Progress (85%)</span>
               </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 95%;"></div>
+              <p class="subtext">Deploy CRM tracking nodes to automate B2B outbound funnels, trimming customer acquisition cost.</p>
+              <div class="milestone-tags">
+                <span class="milestone-tag done">✓ landing page audit</span>
+                <span class="milestone-tag done">✓ CRM tags syncing</span>
+                <span class="milestone-tag done">✓ Copy edits live</span>
+                <span class="milestone-tag">Launch A/B tests</span>
+              </div>
+              <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-gray-light);">
+                <strong>Client Organization:</strong> Nova Commerce LLC &bull; <strong>Lead PM:</strong> Sarah Jenkins &bull; <strong>Due Date:</strong> July 28, 2026
               </div>
             </div>
-            <div class="goal-item">
-              <div class="goal-meta">
-                <span class="goal-name">Seed Fundraising Consulting</span>
-                <span class="goal-progress">75%</span>
+
+            <!-- Project 2 -->
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title">Fintech API Restructuring</span>
+                <span class="status-badge status-progress">In Progress (40%)</span>
               </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 75%;"></div>
+              <p class="subtext">Configure custom back-office database triggers and webhook parameters to support cross-border settlements.</p>
+              <div class="milestone-tags">
+                <span class="milestone-tag done">✓ Database logs review</span>
+                <span class="milestone-tag">Webhooks configs</span>
+                <span class="milestone-tag">Beta tests sandbox</span>
               </div>
-            </div>
-            <div class="goal-item">
-              <div class="goal-meta">
-                <span class="goal-name">Marketing Campaign ROI</span>
-                <span class="goal-progress">85%</span>
-              </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 85%;"></div>
+              <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-gray-light);">
+                <strong>Client Organization:</strong> FinTech Synergy Corp &bull; <strong>Lead PM:</strong> Marcus Vance &bull; <strong>Due Date:</strong> August 18, 2026
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Clients Database Logs & Auditing -->
-      <div class="table-card glass-panel reveal-up">
-        <div class="card-header-flex">
-          <h2 class="card-title">Recent Active Projects Portfolio</h2>
-          <div style="font-size: 0.85rem; color: var(--cyan); cursor: pointer;">View All Records</div>
+      <!-- ==========================================
+           TAB 4: Services
+           ========================================== -->
+      <div id="tab-services" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
+          <h2 class="card-title" style="margin-bottom:1.5rem;">Advisory Programs Configurator</h2>
+          
+          <div class="detail-list">
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title" style="font-size:1.1rem; color:var(--cyan);">SaaS Corporate Strategy Tier</span>
+                <span style="font-weight:700; color:#fff;">$5,500 / Month</span>
+              </div>
+              <p class="subtext">Includes weekly 2-hour coaching sessions, quarterly cap audit boards, operational blueprints drafting, and pitch validation keys.</p>
+              <div style="margin-top: 0.5rem; font-size:0.8rem; color:var(--text-gray);">
+                <strong>Current Subscribed Cohort:</strong> 8 Corporate Clients &bull; <strong>Associated Consultants:</strong> Marcus Vance, David Kross
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title" style="font-size:1.1rem; color:var(--cyan);">Startup Seed Pitch Tier</span>
+                <span style="font-weight:700; color:#fff;">$2,900 / Month</span>
+              </div>
+              <p class="subtext">Includes slides styling diagnostics, financial model formula setups, and investor matchmaking listings databases.</p>
+              <div style="margin-top: 0.5rem; font-size:0.8rem; color:var(--text-gray);">
+                <strong>Current Subscribed Cohort:</strong> 12 Startup Clients &bull; <strong>Associated Consultants:</strong> David Kross, Sarah Jenkins
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="table-responsive">
-          <table class="dashboard-table">
-            <thead>
-              <tr>
-                <th>Client Corporate Name</th>
-                <th>Service Domain</th>
-                <th>Assigned Consultant</th>
-                <th>SLA Milestones</th>
-                <th>Growth Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>FinTech Synergy Corp</td>
-                <td>Financial Restructuring</td>
-                <td>Marcus Vance</td>
-                <td>Phase 2 Delivery</td>
-                <td><span class="status-badge status-progress">In Progress</span></td>
-              </tr>
-              <tr>
-                <td>GreenEnergy Ventures</td>
-                <td>Startup Pitching &amp; Valuation</td>
-                <td>Sarah Jenkins</td>
-                <td>Completed Funding Seed</td>
-                <td><span class="status-badge status-completed">Completed</span></td>
-              </tr>
-              <tr>
-                <td>Nova Commerce LLC</td>
-                <td>Digital Marketing funnel</td>
-                <td>Marcus Vance</td>
-                <td>Setup Automation Scripts</td>
-                <td><span class="status-badge status-progress">In Progress</span></td>
-              </tr>
-              <tr>
-                <td>Core Retail Solutions</td>
-                <td>Corporate Growth Strategy</td>
-                <td>Marcus Vance</td>
-                <td>Awaiting Audit Feedback</td>
-                <td><span class="status-badge status-pending">Pending</span></td>
-              </tr>
-            </tbody>
-          </table>
+      </div>
+
+      <!-- ==========================================
+           TAB 5: Analytics
+           ========================================== -->
+      <div id="tab-analytics" class="dashboard-tab-content" style="display: none;">
+        <div class="analytics-grid">
+          <div class="chart-card glass-panel">
+            <h2 class="card-title" style="margin-bottom:1.5rem;">Client Conversion Velocity</h2>
+            <div class="chart-container">
+              <svg class="svg-chart" viewBox="0 0 600 240">
+                <line x1="50" y1="50" x2="550" y2="50" class="chart-grid-line"></line>
+                <line x1="50" y1="120" x2="550" y2="120" class="chart-grid-line"></line>
+                <line x1="50" y1="190" x2="550" y2="190" class="chart-grid-line"></line>
+                <path d="M 50 190 Q 200 120 350 140 T 550 50" fill="none" stroke="var(--cyan)" stroke-width="3"></path>
+                <circle cx="350" cy="140" r="6" fill="var(--cyan)"></circle>
+              </svg>
+            </div>
+          </div>
+
+          <div class="widget-card glass-panel">
+            <h2 class="card-title" style="margin-bottom: 1rem;">Portfolio Diagnostics Metrics</h2>
+            <div class="goals-list">
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span>Customer Retention Score</span>
+                  <strong>98.2%</strong>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 98%;"></div></div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span>Average Hours advisory / Client / mo</span>
+                  <strong>18.4 Hrs</strong>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 6: Revenue
+           ========================================== -->
+      <div id="tab-revenue" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
+          <h2 class="card-title" style="margin-bottom:1.5rem;">Monthly Retainers Accounting Ledger</h2>
+          <div class="table-responsive">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Invoice Code</th>
+                  <th>Corporate Client</th>
+                  <th>Billing Plan</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Billing Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>STK-INV-902</td>
+                  <td>FinTech Synergy Corp</td>
+                  <td>Enterprise Strategy</td>
+                  <td>$5,500.00</td>
+                  <td><span class="status-badge status-completed">Paid</span></td>
+                  <td>July 10, 2026</td>
+                </tr>
+                <tr>
+                  <td>STK-INV-903</td>
+                  <td>Nova Commerce LLC</td>
+                  <td>Startup Scale</td>
+                  <td>$2,900.00</td>
+                  <td><span class="status-badge status-progress">Pending</span></td>
+                  <td>July 12, 2026</td>
+                </tr>
+                <tr>
+                  <td>STK-INV-904</td>
+                  <td>GreenEnergy Ventures</td>
+                  <td>Custom Valuation</td>
+                  <td>$4,200.00</td>
+                  <td><span class="status-badge status-completed">Paid</span></td>
+                  <td>July 08, 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 7: Team
+           ========================================== -->
+      <div id="tab-team" class="dashboard-tab-content" style="display: none;">
+        <div class="kpi-grid">
+          <!-- Consultant 1 -->
+          <div class="kpi-card glass-panel" style="padding: 1.5rem; text-align: left;">
+            <div class="avatar" style="margin-bottom:1rem; width: 48px; height: 48px; border-radius: 50%;">MV</div>
+            <h3 style="font-size: 1.15rem; color:#fff; margin-bottom: 0.25rem;">Marcus Vance</h3>
+            <p style="font-size: 0.8rem; color: var(--cyan); margin-bottom: 1rem;">Managing Director &bull; Founder</p>
+            <p class="subtext" style="margin-bottom: 1.5rem;">Expertise: Cross-border corporate structure, Series A recapitalization formulas, cap table adjustments.</p>
+            <div class="subtext">
+              <strong>Assigned Accounts:</strong> 4 Clients &bull; <strong>Monthly Hours Logged:</strong> 48 Hrs
+            </div>
+          </div>
+
+          <!-- Consultant 2 -->
+          <div class="kpi-card glass-panel" style="padding: 1.5rem; text-align: left;">
+            <div class="avatar" style="margin-bottom:1rem; width: 48px; height: 48px; border-radius: 50%;">SJ</div>
+            <h3 style="font-size: 1.15rem; color:#fff; margin-bottom: 0.25rem;">Sarah Jenkins</h3>
+            <p style="font-size: 0.8rem; color: var(--cyan); margin-bottom: 1rem;">Director of Digital Scaling</p>
+            <p class="subtext" style="margin-bottom: 1.5rem;">Expertise: Lead generation marketing campaigns, CRM syncing, webhook event sequences.</p>
+            <div class="subtext">
+              <strong>Assigned Accounts:</strong> 3 Clients &bull; <strong>Monthly Hours Logged:</strong> 36 Hrs
+            </div>
+          </div>
+
+          <!-- Consultant 3 -->
+          <div class="kpi-card glass-panel" style="padding: 1.5rem; text-align: left;">
+            <div class="avatar" style="margin-bottom:1rem; width: 48px; height: 48px; border-radius: 50%;">DK</div>
+            <h3 style="font-size: 1.15rem; color:#fff; margin-bottom: 0.25rem;">David Kross</h3>
+            <p style="font-size: 0.8rem; color: var(--cyan); margin-bottom: 1rem;">Senior Valuation Advisor</p>
+            <p class="subtext" style="margin-bottom: 1.5rem;">Expertise: Venture capital formulas, valuation models drafting, slide structures auditing.</p>
+            <div class="subtext">
+              <strong>Assigned Accounts:</strong> 5 Clients &bull; <strong>Monthly Hours Logged:</strong> 42 Hrs
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 8: Reports
+           ========================================== -->
+      <div id="tab-reports" class="dashboard-tab-content" style="display: none;">
+        <div class="widget-card glass-panel" style="max-width: 600px;">
+          <h2 class="card-title" style="margin-bottom: 1.5rem;">PDF Playbook Compiler</h2>
+          <p class="subtext" style="margin-bottom: 1.5rem;">Generate customized corporate strategy reviews containing the latest KPI graphs and metrics listings.</p>
+          
+          <form onsubmit="event.preventDefault(); alert('Playbook generated! PDF download starting...');" style="display:grid; gap:1rem;">
+            <div class="form-group">
+              <label class="form-label">Target Corporate Account</label>
+              <div class="select-wrapper" style="margin-top:0.5rem;">
+                <select class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md);">
+                  <option>FinTech Synergy Corp</option>
+                  <option>Nova Commerce LLC</option>
+                  <option>GreenEnergy Ventures</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Review Domain Focus</label>
+              <div class="select-wrapper" style="margin-top:0.5rem;">
+                <select class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md);">
+                  <option>Digital Automations &amp; CRM Syncs</option>
+                  <option>Financial restructuring formulas</option>
+                  <option>General Strategy review Playbook</option>
+                </select>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:1rem;">Compile PDF Strategy Document</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 9: Settings
+           ========================================== -->
+      <div id="tab-settings" class="dashboard-tab-content" style="display: none;">
+        <div class="widget-card glass-panel" style="max-width: 600px;">
+          <h2 class="card-title" style="margin-bottom: 1.5rem;">Global System Settings</h2>
+          
+          <div style="display:flex; flex-direction:column; gap:1.25rem;">
+            <div>
+              <h4 style="color:#fff; font-size:1rem; margin-bottom:0.75rem;">Platform Integration Webhooks</h4>
+              <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                <input type="checkbox" checked style="width:16px; height:16px;">
+                <span class="subtext">Trigger automated invoice creations on invoice due dates.</span>
+              </label>
+              <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; margin-top:0.5rem;">
+                <input type="checkbox" checked style="width:16px; height:16px;">
+                <span class="subtext">Auto-update active projects progress markers via API.</span>
+              </label>
+            </div>
+            <button class="btn btn-primary" onclick="alert('Admin settings saved!');" style="justify-content:center; margin-top:1rem;">Save Platform Settings</button>
+          </div>
         </div>
       </div>
     </main>

@@ -39,19 +39,42 @@ function initSidebarNavigation() {
   
   menuItems.forEach(item => {
     item.addEventListener('click', (e) => {
+      e.preventDefault();
       const text = item.textContent.trim().toLowerCase();
       
       if (text.includes('logout')) {
-        e.preventDefault();
         alert('Logging out...');
         window.location.href = 'login.html';
-      } else if (text.includes('dashboard')) {
-        // Stay on current dashboard
         return;
-      } else {
-        // Every other sidebar item redirects to 404
-        e.preventDefault();
-        window.location.href = '404.html';
+      }
+      
+      // Formulate dynamic tab section ID
+      const formattedText = text.replace(/\s+/g, '-');
+      const tabId = `tab-${formattedText}`;
+      
+      const targetSection = document.getElementById(tabId);
+      if (targetSection) {
+        // Set active menu item styling
+        menuItems.forEach(mi => mi.classList.remove('active'));
+        item.classList.add('active');
+        
+        // Hide all dashboard panels
+        const allTabs = document.querySelectorAll('.dashboard-tab-content');
+        allTabs.forEach(tab => {
+          tab.style.display = 'none';
+        });
+        
+        // Display selected dashboard panel
+        targetSection.style.display = 'block';
+        
+        // Scroll content to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Close mobile sidebar menu if open
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar && window.innerWidth <= 992) {
+          sidebar.classList.remove('open');
+        }
       }
     });
   });

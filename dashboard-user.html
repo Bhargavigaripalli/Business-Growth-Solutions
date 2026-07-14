@@ -9,6 +9,58 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/dashboards.css">
+  <style>
+    .dashboard-tab-content {
+      animation: fadeIn 0.4s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .detail-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .detail-title {
+      font-weight: 600;
+      color: #fff;
+    }
+    .subtext {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+    .milestone-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .milestone-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray-light);
+    }
+    .milestone-tag.done {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--emerald);
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +73,7 @@
   <div class="dashboard-layout">
     <!-- Left Sidebar -->
     <aside class="sidebar">
-      <div class="sidebar-logo">
+      <a href="index.html" class="sidebar-logo">
         <div class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -30,7 +82,7 @@
           </svg>
         </div>
         STACKLY<span>GROWTH</span>
-      </div>
+      </a>
       
       <nav class="sidebar-menu">
         <a href="#" class="sidebar-item active">
@@ -42,13 +94,13 @@
           </svg>
           Dashboard
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
           </svg>
           My Projects
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
             <polyline points="2 17 12 22 22 17"></polyline>
@@ -56,17 +108,16 @@
           </svg>
           My Services
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
             <line x1="16" y1="13" x2="8" y2="13"></line>
             <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
           Business Reports
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -75,21 +126,21 @@
           </svg>
           Appointments
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
           Notifications
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
           Profile
         </a>
-        <a href="404.html" class="sidebar-item">
+        <a href="#" class="sidebar-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -140,223 +191,519 @@
         </div>
       </div>
 
-      <!-- KPI Summary Row -->
-      <div class="kpi-grid">
-        <!-- KPI 1 -->
-        <div class="kpi-card glass-panel reveal-up">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-              <polyline points="2 12 12 17 22 12"></polyline>
-            </svg>
+      <!-- ==========================================
+           TAB 1: Dashboard Overview (Default)
+           ========================================== -->
+      <div id="tab-dashboard" class="dashboard-tab-content">
+        <!-- KPI Summary Row -->
+        <div class="kpi-grid">
+          <div class="kpi-card glass-panel reveal-up">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="kpi-value">04</div>
+            <div class="kpi-label">Active Projects</div>
+            <div class="kpi-trend trend-up">+1 this month</div>
           </div>
-          <div class="kpi-value">04</div>
-          <div class="kpi-label">Active Projects</div>
-          <div class="kpi-trend trend-up">
-            <span>+1</span> this month
+          <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.1s;">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="kpi-value">28 Hrs</div>
+            <div class="kpi-label">Consultation Conducted</div>
+            <div class="kpi-trend trend-up">+4 hrs vs target</div>
+          </div>
+          <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.2s;">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="kpi-value">94%</div>
+            <div class="kpi-label">Business Score</div>
+            <div class="kpi-trend trend-up">+3.2% health increase</div>
+          </div>
+          <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.3s;">
+            <div class="kpi-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <div class="kpi-value">18.5%</div>
+            <div class="kpi-label">Monthly Growth Rate</div>
+            <div class="kpi-trend trend-up">+2.1% vs last Q</div>
           </div>
         </div>
-        <!-- KPI 2 -->
-        <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.1s;">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
+
+        <!-- Charts & Tracker Row -->
+        <div class="analytics-grid">
+          <div class="chart-card glass-panel">
+            <div class="card-header-flex">
+              <h2 class="card-title">Business Growth Progress</h2>
+              <div style="font-size: 0.85rem; color: var(--text-gray);">Jan - Jun Period</div>
+            </div>
+            <div class="chart-container">
+              <svg class="svg-chart" viewBox="0 0 600 260">
+                <defs>
+                  <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--cyan)"></stop>
+                    <stop offset="100%" stop-color="var(--primary)"></stop>
+                  </linearGradient>
+                  <linearGradient id="area-gradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--cyan)" stop-opacity="0.4"></stop>
+                    <stop offset="100%" stop-color="var(--cyan)" stop-opacity="0.0"></stop>
+                  </linearGradient>
+                </defs>
+                <line x1="50" y1="50" x2="550" y2="50" class="chart-grid-line"></line>
+                <line x1="50" y1="110" x2="550" y2="110" class="chart-grid-line"></line>
+                <line x1="50" y1="170" x2="550" y2="170" class="chart-grid-line"></line>
+                <line x1="50" y1="230" x2="550" y2="230" class="chart-grid-line"></line>
+                <text x="50" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jan</text>
+                <text x="150" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Feb</text>
+                <text x="250" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Mar</text>
+                <text x="350" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Apr</text>
+                <text x="450" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">May</text>
+                <text x="550" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jun</text>
+                <path d="M 50 230 L 50 170 L 150 140 L 250 190 L 350 90 L 450 110 L 550 60 L 550 230 Z" class="chart-area"></path>
+                <path d="M 50 170 L 150 140 L 250 190 L 350 90 L 450 110 L 550 60" class="chart-line"></path>
+                <circle cx="50" cy="170" r="5" class="chart-point" data-value="12K" data-month="Jan"></circle>
+                <circle cx="150" cy="140" r="5" class="chart-point" data-value="15K" data-month="Feb"></circle>
+                <circle cx="250" cy="190" r="5" class="chart-point" data-value="10K" data-month="Mar"></circle>
+                <circle cx="350" cy="90" r="5" class="chart-point" data-value="24K" data-month="Apr"></circle>
+                <circle cx="450" cy="110" r="5" class="chart-point" data-value="21K" data-month="May"></circle>
+                <circle cx="550" cy="60" r="5" class="chart-point" data-value="30K" data-month="Jun"></circle>
+              </svg>
+            </div>
           </div>
-          <div class="kpi-value">28 Hrs</div>
-          <div class="kpi-label">Consultation Conducted</div>
-          <div class="kpi-trend trend-up">
-            <span>+4 hrs</span> vs target
+          <div class="widget-card glass-panel">
+            <h2 class="card-title">Business Goals Status</h2>
+            <div class="goals-list">
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span class="goal-name">Strategy Restructuring</span>
+                  <span class="goal-progress">90%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span class="goal-name">Market Expansion Research</span>
+                  <span class="goal-progress">65%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 65%;"></div></div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-meta">
+                  <span class="goal-name">Ad Campaign Optimization</span>
+                  <span class="goal-progress">40%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 40%;"></div></div>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- KPI 3 -->
-        <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.2s;">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
+
+        <!-- Schedule & Timeline Section Grid -->
+        <div class="analytics-grid">
+          <div class="widget-card glass-panel">
+            <h2 class="card-title" style="margin-bottom: 1.5rem;">Growth Timeline History</h2>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-marker">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Strategy Deck Verified</div>
+                  <div class="timeline-time">Today, 10:30 AM</div>
+                  <div class="timeline-desc">The consulting team finalized the Q3 corporate strategy playbook.</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-marker">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Audit Insights Shared</div>
+                  <div class="timeline-time">2 days ago</div>
+                  <div class="timeline-desc">Digital marketing conversion audit uploaded in reports folder.</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="kpi-value">94%</div>
-          <div class="kpi-label">Business Score</div>
-          <div class="kpi-trend trend-up">
-            <span>+3.2%</span> health increase
-          </div>
-        </div>
-        <!-- KPI 4 -->
-        <div class="kpi-card glass-panel reveal-up" style="animation-delay: 0.3s;">
-          <div class="kpi-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="20" x2="18" y2="10"></line>
-              <line x1="12" y1="20" x2="12" y2="4"></line>
-              <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
-          </div>
-          <div class="kpi-value">18.5%</div>
-          <div class="kpi-label">Monthly Growth Rate</div>
-          <div class="kpi-trend trend-up">
-            <span>+2.1%</span> vs last Q
+          <div class="widget-card glass-panel">
+            <h2 class="card-title">Appointments</h2>
+            <div class="calendar-widget">
+              <div class="calendar-header">
+                <span id="calendar-month-name">July 2026</span>
+                <span style="font-size: 0.85rem; color: var(--cyan);">Today</span>
+              </div>
+              <div class="calendar-grid"></div>
+            </div>
+            <div class="meetings-list">
+              <div class="meeting-item">
+                <div class="meeting-details">
+                  <span class="meeting-name">Marketing Sync</span>
+                  <span class="meeting-time">Tomorrow, 14:00 PM</span>
+                </div>
+                <span class="meeting-badge">Video Call</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Charts & Tracker Row -->
-      <div class="analytics-grid">
-        <!-- SVG Line Chart Card -->
-        <div class="chart-card glass-panel reveal-left">
+      <!-- ==========================================
+           TAB 2: My Projects
+           ========================================== -->
+      <div id="tab-my-projects" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
           <div class="card-header-flex">
-            <h2 class="card-title">Business Growth Progress</h2>
-            <div style="font-size: 0.85rem; color: var(--text-gray);">Jan - Jun Period</div>
+            <h2 class="card-title">Your Active Growth Projects</h2>
           </div>
-          <div class="chart-container">
-            <svg class="svg-chart" viewBox="0 0 600 260">
-              <defs>
-                <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--cyan)"></stop>
-                  <stop offset="100%" stop-color="var(--primary)"></stop>
-                </linearGradient>
-                <linearGradient id="area-gradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--cyan)" stop-opacity="0.4"></stop>
-                  <stop offset="100%" stop-color="var(--cyan)" stop-opacity="0.0"></stop>
-                </linearGradient>
-              </defs>
-              <!-- Grid lines -->
-              <line x1="50" y1="50" x2="550" y2="50" class="chart-grid-line"></line>
-              <line x1="50" y1="110" x2="550" y2="110" class="chart-grid-line"></line>
-              <line x1="50" y1="170" x2="550" y2="170" class="chart-grid-line"></line>
-              <line x1="50" y1="230" x2="550" y2="230" class="chart-grid-line"></line>
-              
-              <!-- X axis labels -->
-              <text x="50" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jan</text>
-              <text x="150" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Feb</text>
-              <text x="250" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Mar</text>
-              <text x="350" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Apr</text>
-              <text x="450" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">May</text>
-              <text x="550" y="250" fill="var(--text-gray)" font-size="11" text-anchor="middle">Jun</text>
-
-              <!-- Filled Path area -->
-              <path d="M 50 230 L 50 170 L 150 140 L 250 190 L 350 90 L 450 110 L 550 60 L 550 230 Z" class="chart-area"></path>
-              
-              <!-- Line path -->
-              <path d="M 50 170 L 150 140 L 250 190 L 350 90 L 450 110 L 550 60" class="chart-line"></path>
-              
-              <!-- Circles point data -->
-              <circle cx="50" cy="170" r="5" class="chart-point" data-value="12K" data-month="Jan"></circle>
-              <circle cx="150" cy="140" r="5" class="chart-point" data-value="15K" data-month="Feb"></circle>
-              <circle cx="250" cy="190" r="5" class="chart-point" data-value="10K" data-month="Mar"></circle>
-              <circle cx="350" cy="90" r="5" class="chart-point" data-value="24K" data-month="Apr"></circle>
-              <circle cx="450" cy="110" r="5" class="chart-point" data-value="21K" data-month="May"></circle>
-              <circle cx="550" cy="60" r="5" class="chart-point" data-value="30K" data-month="Jun"></circle>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Goals Widget Card -->
-        <div class="widget-card glass-panel reveal-right">
-          <h2 class="card-title">Business Goals Status</h2>
-          <div class="goals-list">
-            <!-- Goal 1 -->
-            <div class="goal-item">
-              <div class="goal-meta">
-                <span class="goal-name">Strategy Restructuring</span>
-                <span class="goal-progress">90%</span>
+          
+          <div class="detail-list">
+            <!-- Project 1 -->
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title">Outbound Lead Pipeline Setup</span>
+                <span class="status-badge status-progress">In Progress (75%)</span>
               </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 90%;"></div>
+              <p class="subtext">Objective: Build automated outbound B2B messaging campaign templates targeting tech enterprises.</p>
+              <div class="milestone-tags">
+                <span class="milestone-tag done">✓ Target list scraped</span>
+                <span class="milestone-tag done">✓ Email copy written</span>
+                <span class="milestone-tag done">✓ Warm-up sequences active</span>
+                <span class="milestone-tag">Launch campaign</span>
+              </div>
+              <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-gray-light);">
+                <strong>Project Manager:</strong> Sarah Jenkins &bull; <strong>Budget Status:</strong> Approved &bull; <strong>SLA Priority:</strong> High
               </div>
             </div>
-            <!-- Goal 2 -->
-            <div class="goal-item">
-              <div class="goal-meta">
-                <span class="goal-name">Market Expansion Research</span>
-                <span class="goal-progress">65%</span>
+
+            <!-- Project 2 -->
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title">LTV/Churn Analytics Dashboard</span>
+                <span class="status-badge status-completed">Completed</span>
               </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 65%;"></div>
+              <p class="subtext">Objective: Establish telemetry monitoring panels to optimize SaaS revenue churn levels below 1.5% monthly.</p>
+              <div class="milestone-tags">
+                <span class="milestone-tag done">✓ Segment audit</span>
+                <span class="milestone-tag done">✓ Retention math verified</span>
+                <span class="milestone-tag done">✓ Dashboard delivery</span>
+              </div>
+              <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-gray-light);">
+                <strong>Project Manager:</strong> Marcus Vance &bull; <strong>Completion Date:</strong> June 30, 2026 &bull; <strong>Satisfaction Score:</strong> 10/10
               </div>
             </div>
-            <!-- Goal 3 -->
-            <div class="goal-item">
-              <div class="goal-meta">
-                <span class="goal-name">Ad Campaign Optimization</span>
-                <span class="goal-progress">40%</span>
+
+            <!-- Project 3 -->
+            <div class="detail-item">
+              <div class="detail-header">
+                <span class="detail-title">Q3 Pitch Deck Compilation</span>
+                <span class="status-badge status-pending">Pending Kickoff</span>
               </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 40%;"></div>
+              <p class="subtext">Objective: Design a premium 15-slide investment deck for $5M Series Seed venture funding rounds.</p>
+              <div class="milestone-tags">
+                <span class="milestone-tag">Financial model formulas</span>
+                <span class="milestone-tag">Competitor grid analysis</span>
+                <span class="milestone-tag">Slide visual styling</span>
+              </div>
+              <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-gray-light);">
+                <strong>Project Manager:</strong> David Kross &bull; <strong>Tentative Start:</strong> July 25, 2026 &bull; <strong>Estimated Duration:</strong> 3 weeks
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Schedule & Timeline Section Grid -->
-      <div class="analytics-grid">
-        <!-- Progress Tracker Timeline -->
-        <div class="widget-card glass-panel reveal-left">
-          <h2 class="card-title" style="margin-bottom: 1.5rem;">Growth Timeline History</h2>
-          <div class="timeline-list">
-            <div class="timeline-item">
-              <div class="timeline-marker">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+      <!-- ==========================================
+           TAB 3: My Services
+           ========================================== -->
+      <div id="tab-my-services" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
+          <h2 class="card-title" style="margin-bottom: 1.5rem;">Subscribed Advisory Services</h2>
+          
+          <div class="detail-list">
+            <!-- Service 1 -->
+            <div class="detail-item" style="border-left: 3px solid var(--cyan);">
+              <div class="detail-header">
+                <span class="detail-title" style="font-size: 1.1rem; color: var(--cyan);">SaaS Tech Strategy Framework</span>
+                <span class="status-badge status-completed">Active Subscription</span>
               </div>
-              <div class="timeline-content">
-                <div class="timeline-title">Strategy Deck Verified</div>
-                <div class="timeline-time">Today, 10:30 AM</div>
-                <div class="timeline-desc">The consulting team finalized the Q3 corporate strategy playbook.</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-marker">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <div class="timeline-title">Audit Insights Shared</div>
-                <div class="timeline-time">2 days ago</div>
-                <div class="timeline-desc">Digital marketing conversion audit uploaded in reports folder.</div>
+              <p class="subtext" style="margin-top: 0.25rem;">Weekly executive coaching calls, monthly overhead audits, and operational scaling check-ins.</p>
+              <div style="margin-top: 1rem; font-size: 0.8rem; line-height: 1.5; color: var(--text-gray-light);">
+                <strong>Primary Advisor:</strong> Marcus Vance &bull; <strong>Next Coaching Call:</strong> July 15, 2026 &bull; <strong>Hours Logged:</strong> 18 of 24 Hrs
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-marker">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
+
+            <!-- Service 2 -->
+            <div class="detail-item" style="border-left: 3px solid var(--primary);">
+              <div class="detail-header">
+                <span class="detail-title" style="font-size: 1.1rem; color: var(--cyan);">Digital Automations & Webhooks Config</span>
+                <span class="status-badge status-completed">Active Subscription</span>
               </div>
-              <div class="timeline-content">
-                <div class="timeline-title">Account Created &amp; Initialized</div>
-                <div class="timeline-time">1 week ago</div>
-                <div class="timeline-desc">Welcome to the premium consultant workspace. Your profile is active.</div>
+              <p class="subtext" style="margin-top: 0.25rem;">Optimization of CRM data funnels, email marketing sequences, and custom API webhooks.</p>
+              <div style="margin-top: 1rem; font-size: 0.8rem; line-height: 1.5; color: var(--text-gray-light);">
+                <strong>Primary Advisor:</strong> Sarah Jenkins &bull; <strong>Active Sync Channels:</strong> HubSpot, Segment, Zapier &bull; <strong>Hours Logged:</strong> 10 of 12 Hrs
+              </div>
+            </div>
+          </div>
+
+          <h2 class="card-title" style="margin-top: 3rem; margin-bottom: 1.5rem;">Available Catalog Upgrades</h2>
+          <div class="kpi-grid">
+            <div class="kpi-card glass-panel" style="padding: 1.5rem; text-align: left;">
+              <h4 style="font-size: 1rem; color: #fff; margin-bottom: 0.5rem;">Series Seed Valuation Audit</h4>
+              <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 1.5rem;">Audit cap tables, build discount cash flows models, and prepare valuation formulas for investors.</p>
+              <button class="btn btn-secondary" onclick="alert('Inquiry sent! Marcus Vance will connect soon.');" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Request Strategy</button>
+            </div>
+            <div class="kpi-card glass-panel" style="padding: 1.5rem; text-align: left;">
+              <h4 style="font-size: 1rem; color: #fff; margin-bottom: 0.5rem;">Conversion Funnel Redesign</h4>
+              <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 1.5rem;">Full audit on digital landing pages, layout changes, CTA button placements, and copy optimization.</p>
+              <button class="btn btn-secondary" onclick="alert('Inquiry sent! Sarah Jenkins will connect soon.');" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Request Audit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 4: Business Reports
+           ========================================== -->
+      <div id="tab-business-reports" class="dashboard-tab-content" style="display: none;">
+        <div class="table-card glass-panel">
+          <h2 class="card-title" style="margin-bottom: 1.5rem;">Downloadable Strategic Frameworks</h2>
+          <div class="table-responsive">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Report Title</th>
+                  <th>Category</th>
+                  <th>Published Date</th>
+                  <th>File Details</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Q2 Market Restructuring Audit</td>
+                  <td>Strategy Playbook</td>
+                  <td>June 15, 2026</td>
+                  <td class="subtext">PDF / 4.2 MB / Compiled by Marcus Vance</td>
+                  <td><a href="404.html" style="color:var(--cyan); font-weight:600;">Download Document</a></td>
+                </tr>
+                <tr>
+                  <td>CAC Funnel Audit Review</td>
+                  <td>Marketing Diagnostics</td>
+                  <td>June 08, 2026</td>
+                  <td class="subtext">PDF / 2.8 MB / Compiled by Sarah Jenkins</td>
+                  <td><a href="404.html" style="color:var(--cyan); font-weight:600;">Download Document</a></td>
+                </tr>
+                <tr>
+                  <td>Q1 Operational Budget Analysis</td>
+                  <td>Financial Model</td>
+                  <td>May 20, 2026</td>
+                  <td class="subtext">XLSX / 1.4 MB / Compiled by David Kross</td>
+                  <td><a href="404.html" style="color:var(--cyan); font-weight:600;">Download Spreadsheet</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 5: Appointments
+           ========================================== -->
+      <div id="tab-appointments" class="dashboard-tab-content" style="display: none;">
+        <div class="analytics-grid">
+          <!-- Request appointment -->
+          <div class="widget-card glass-panel">
+            <h2 class="card-title" style="margin-bottom: 1.5rem;">Schedule Advisory Consultation</h2>
+            <form onsubmit="event.preventDefault(); alert('Session requested! Our administrative assistant will email Zoom slot matches in 2 hrs.'); this.reset();" style="display:grid; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label">Advisory Consultant</label>
+                <div class="select-wrapper" style="margin-top: 0.5rem;">
+                  <select class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md);">
+                    <option>Marcus Vance (Strategic Transformation &amp; Cap tables)</option>
+                    <option>Sarah Jenkins (Digital Automations &amp; Funnels)</option>
+                    <option>David Kross (Venture Capital &amp; Pitching)</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group-flex">
+                <div class="form-group" style="flex:1;">
+                  <label class="form-label">Target Date</label>
+                  <input type="date" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem;" required>
+                </div>
+                <div class="form-group" style="flex:1;">
+                  <label class="form-label">Target Slot</label>
+                  <input type="time" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem;" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Core Session Objectives</label>
+                <textarea class="form-input" placeholder="e.g. Audit Q3 marketing goals, review cap table formulas" rows="3" style="padding:1rem; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; border-radius: var(--radius-md); margin-top: 0.5rem; resize: none;" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="justify-content:center;">Book Video Consultation</button>
+            </form>
+          </div>
+
+          <!-- Active meetings logs -->
+          <div class="widget-card glass-panel">
+            <h2 class="card-title" style="margin-bottom: 1.5rem;">Advisory Calendar Agenda</h2>
+            
+            <div class="timeline-list">
+              <!-- Meeting 1 -->
+              <div class="timeline-item">
+                <div class="timeline-marker" style="background: var(--cyan);">★</div>
+                <div class="timeline-content">
+                  <div class="timeline-title" style="color: #fff; font-weight:600;">Q3 Strategy Kickoff Session</div>
+                  <div class="subtext">Tomorrow, 10:00 AM &bull; Video Consultation</div>
+                  <p class="subtext" style="margin-top:0.25rem;">Meeting with Marcus Vance to define target growth velocities and project owners.</p>
+                  <div style="margin-top:0.5rem;"><a href="404.html" style="font-size:0.75rem; color:var(--cyan); font-weight:600;">Join Zoom Session</a></div>
+                </div>
+              </div>
+
+              <!-- Meeting 2 -->
+              <div class="timeline-item">
+                <div class="timeline-marker">✓</div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Funnel Optimization Audit</div>
+                  <div class="subtext">June 28, 2026 &bull; Completed Session</div>
+                  <p class="subtext" style="margin-top:0.25rem;">Sarah Jenkins reviewed HubSpot CRM workflows and set email warm-up baselines.</p>
+                  <div style="margin-top:0.5rem;"><a href="404.html" style="font-size:0.75rem; color:var(--cyan);">View Session Summary Note</a></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Appointments & Calendar Widget -->
-        <div class="widget-card glass-panel reveal-right">
-          <h2 class="card-title">Consultation Appointments</h2>
-          <div class="calendar-widget">
-            <div class="calendar-header">
-              <span id="calendar-month-name">July 2026</span>
-              <span style="font-size: 0.85rem; color: var(--cyan);">Today</span>
+      <!-- ==========================================
+           TAB 6: Notifications
+           ========================================== -->
+      <div id="tab-notifications" class="dashboard-tab-content" style="display: none;">
+        <div class="widget-card glass-panel">
+          <div class="card-header-flex" style="margin-bottom: 1.5rem;">
+            <h2 class="card-title">System Activity Inbox</h2>
+            <button class="btn btn-secondary" onclick="alert('All notifications marked as read.');" style="font-size:0.75rem; padding: 0.25rem 0.5rem;">Mark All Read</button>
+          </div>
+          
+          <div class="detail-list">
+            <!-- Notification 1 -->
+            <div class="detail-item" style="border-left: 2px solid var(--cyan);">
+              <div class="detail-header" style="margin-bottom: 0.25rem;">
+                <span style="font-weight:600; color:#fff; font-size:0.9rem;">Strategy Deck Uploaded</span>
+                <span class="subtext">Today, 10:30 AM</span>
+              </div>
+              <p class="subtext">Marcus Vance uploaded the Q3 Strategic Expansion Playbook to your business reports directory.</p>
             </div>
-            <div class="calendar-grid">
-              <!-- Dynamically populated in javascript -->
+
+            <!-- Notification 2 -->
+            <div class="detail-item" style="border-left: 2px solid var(--emerald);">
+              <div class="detail-header" style="margin-bottom: 0.25rem;">
+                <span style="font-weight:600; color:#fff; font-size:0.9rem;">Monthly Invoice Processed</span>
+                <span class="subtext">July 10, 2026</span>
+              </div>
+              <p class="subtext">Transaction code STK-990-2026 cleared successfully. Receipt generated in system settings.</p>
+            </div>
+
+            <!-- Notification 3 -->
+            <div class="detail-item" style="border-left: 2px solid var(--gold);">
+              <div class="detail-header" style="margin-bottom: 0.25rem;">
+                <span style="font-weight:600; color:#fff; font-size:0.9rem;">Milestone Deadline Approaching</span>
+                <span class="subtext">July 08, 2026</span>
+              </div>
+              <p class="subtext">Reminder: The lead pipeline target lists validation must be approved by July 16.</p>
             </div>
           </div>
-          <div class="meetings-list">
-            <div class="meeting-item">
-              <div class="meeting-details">
-                <span class="meeting-name">Marketing Sync</span>
-                <span class="meeting-time">Tomorrow, 14:00 PM</span>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 7: Profile
+           ========================================== -->
+      <div id="tab-profile" class="dashboard-tab-content" style="display: none;">
+        <div class="widget-card glass-panel" style="max-width: 600px;">
+          <h2 class="card-title" style="margin-bottom: 1.5rem;">Corporate Client Profile</h2>
+          
+          <form onsubmit="event.preventDefault(); alert('Profile information saved!');" style="display:grid; gap:1.25rem;">
+            <div class="form-group-flex">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Contact Name</label>
+                <input type="text" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem;" value="Sarah Jenkins">
               </div>
-              <span class="meeting-badge">Video Call</span>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Client Organization</label>
+                <input type="text" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem;" value="Nova Retail Solutions Corp">
+              </div>
             </div>
+
+            <div class="form-group-flex">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Corporate Email</label>
+                <input type="email" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem;" value="s.jenkins@nova-retail.com">
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Access Token Key</label>
+                <input type="text" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:var(--cyan); height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem; font-family:monospace;" value="STK-7729-NVA-449" readonly>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Headquarters Location</label>
+              <input type="text" class="form-input" style="padding-left:1rem; width:100%; border:1px solid rgba(255,255,255,0.08); background: var(--bg-navy-light); color:#fff; height: 40px; border-radius: var(--radius-md); margin-top: 0.5rem;" value="Canary Wharf Tower, London, UK">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="justify-content:center;">Update Contact Information</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 8: Settings
+           ========================================== -->
+      <div id="tab-settings" class="dashboard-tab-content" style="display: none;">
+        <div class="widget-card glass-panel" style="max-width: 600px;">
+          <h2 class="card-title" style="margin-bottom: 1.5rem;">Account Preferences & Notifications</h2>
+          
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <div>
+              <h4 style="color:#fff; font-size:1rem; margin-bottom:0.75rem;">Email Communication Preferences</h4>
+              <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                <input type="checkbox" checked style="width:16px; height:16px;">
+                <span class="subtext">Send email digests instantly on SLA milestone completions.</span>
+              </label>
+              <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; margin-top:0.5rem;">
+                <input type="checkbox" checked style="width:16px; height:16px;">
+                <span class="subtext">Notify me when weekly strategy PDF reviews are published.</span>
+              </label>
+            </div>
+
+            <hr style="border:0; border-top: 1px solid rgba(255,255,255,0.08);">
+
+            <div>
+              <h4 style="color:#fff; font-size:1rem; margin-bottom:0.75rem;">Data Customizations Toggles</h4>
+              <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                <input type="checkbox" style="width:16px; height:16px;">
+                <span class="subtext">Enable telemetry sync beta dashboards features.</span>
+              </label>
+            </div>
+
+            <button class="btn btn-primary" onclick="alert('Preferences saved!');" style="justify-content:center; margin-top:1rem;">Save Preferences</button>
           </div>
         </div>
       </div>

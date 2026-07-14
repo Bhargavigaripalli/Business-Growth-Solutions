@@ -11,6 +11,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
   
   <style>
     /* Contact Page Specific styles */
@@ -276,17 +277,19 @@
       <!-- Right Form Column -->
       <div class="inquiry-card glass-panel reveal-right">
         <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Business Inquiry</h2>
-        <form onsubmit="event.preventDefault(); alert('Inquiry submitted! Our strategy director will connect within 24 working hours.'); this.reset();">
+        <form id="contact-inquiry-form" novalidate>
           <div class="form-group-flex">
-            <!-- Full Name -->
+            <!-- Your Name -->
             <div class="form-group">
               <label class="form-label">Your Name</label>
-              <input type="text" class="form-input-contact" placeholder="e.g. Alex Mercer" required>
+              <input type="text" id="contact-name" class="form-input-contact" placeholder="e.g. Alex Mercer" required>
+              <div class="error-msg" id="name-error"></div>
             </div>
-            <!-- Company -->
+            <!-- Corporate Entity -->
             <div class="form-group">
               <label class="form-label">Corporate Entity</label>
-              <input type="text" class="form-input-contact" placeholder="e.g. Fintech Synergy" required>
+              <input type="text" id="contact-company" class="form-input-contact" placeholder="e.g. Fintech Synergy" required>
+              <div class="error-msg" id="company-error"></div>
             </div>
           </div>
 
@@ -294,12 +297,14 @@
             <!-- Email -->
             <div class="form-group">
               <label class="form-label">Business Email</label>
-              <input type="email" class="form-input-contact" placeholder="e.g. name@company.com" required>
+              <input type="email" id="contact-email" class="form-input-contact" placeholder="e.g. name@company.com" required>
+              <div class="error-msg" id="email-error"></div>
             </div>
             <!-- Phone -->
             <div class="form-group">
               <label class="form-label">Contact Number</label>
-              <input type="tel" class="form-input-contact" placeholder="e.g. +44 20 ..." required>
+              <input type="tel" id="contact-phone" class="form-input-contact" placeholder="10-digit number" required>
+              <div class="error-msg" id="phone-error"></div>
             </div>
           </div>
 
@@ -349,9 +354,25 @@
         </div>
         <p>Premium strategy frameworks, seed capital structuring, and digital optimization tools for modern enterprises.</p>
         <div class="footer-socials">
-          <a href="404.html" class="social-icon">Li</a>
-          <a href="404.html" class="social-icon">Tw</a>
-          <a href="404.html" class="social-icon">Yb</a>
+          <a href="404.html" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="404.html" class="social-icon" aria-label="Twitter X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+            </svg>
+          </a>
+          <a href="404.html" class="social-icon" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+            </svg>
+          </a>
         </div>
       </div>
       
@@ -378,7 +399,7 @@
       <div class="footer-newsletter">
         <h3 class="footer-title">Strategy Insights</h3>
         <p>Subscribe to our weekly corporate growth articles.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');">
+        <form class="newsletter-form" action="404.html" method="GET">
           <input type="email" placeholder="Enter business email" required>
           <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Join</button>
         </form>
@@ -396,5 +417,135 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contact-inquiry-form');
+      if (!contactForm) return;
+
+      const nameInput = document.getElementById('contact-name');
+      const companyInput = document.getElementById('contact-company');
+      const emailInput = document.getElementById('contact-email');
+      const phoneInput = document.getElementById('contact-phone');
+
+      function showError(input, message) {
+        const group = input.closest('.form-group');
+        const errorMsg = group.querySelector('.error-msg');
+        input.classList.remove('input-valid');
+        input.classList.add('input-invalid');
+        if (errorMsg) {
+          errorMsg.textContent = message;
+          errorMsg.classList.add('visible');
+        }
+      }
+
+      function showSuccess(input) {
+        const group = input.closest('.form-group');
+        const errorMsg = group.querySelector('.error-msg');
+        input.classList.remove('input-invalid');
+        input.classList.add('input-valid');
+        if (errorMsg) {
+          errorMsg.textContent = '';
+          errorMsg.classList.remove('visible');
+        }
+      }
+
+      function shakeElement(element) {
+        element.classList.add('shake');
+        setTimeout(() => {
+          element.classList.remove('shake');
+        }, 400);
+      }
+
+      // Name: Only alphabets and spaces, max 16 letters
+      nameInput.addEventListener('input', () => {
+        const value = nameInput.value;
+        const alphabetRegex = /^[A-Za-z\s]+$/;
+        if (value.trim() === '') {
+          showError(nameInput, 'Name is required.');
+        } else if (!alphabetRegex.test(value)) {
+          showError(nameInput, 'Name should accept only alphabets.');
+        } else if (value.replace(/\s/g, '').length > 16) {
+          showError(nameInput, 'Name must be maximum 16 letters.');
+        } else {
+          showSuccess(nameInput);
+        }
+      });
+
+      // Corporate Entity: Only alphabets and spaces, max 20 letters
+      companyInput.addEventListener('input', () => {
+        const value = companyInput.value;
+        const alphabetRegex = /^[A-Za-z\s]+$/;
+        if (value.trim() === '') {
+          showError(companyInput, 'Corporate Entity is required.');
+        } else if (!alphabetRegex.test(value)) {
+          showError(companyInput, 'Corporate Entity should accept only alphabets.');
+        } else if (value.replace(/\s/g, '').length > 20) {
+          showError(companyInput, 'Corporate Entity must be maximum 20 letters.');
+        } else {
+          showSuccess(companyInput);
+        }
+      });
+
+      // Email format only
+      emailInput.addEventListener('input', () => {
+        const value = emailInput.value.trim();
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (value === '') {
+          showError(emailInput, 'Email is required.');
+        } else if (!emailRegex.test(value)) {
+          showError(emailInput, 'Include a valid email format.');
+        } else {
+          showSuccess(emailInput);
+        }
+      });
+
+      // Contact (Phone): Only numbers, exactly 10 digits
+      phoneInput.addEventListener('input', () => {
+        const value = phoneInput.value.trim();
+        const numberRegex = /^[0-9]+$/;
+        if (value === '') {
+          showError(phoneInput, 'Contact number is required.');
+        } else if (!numberRegex.test(value)) {
+          showError(phoneInput, 'Contact number must contain digits only.');
+        } else if (value.length !== 10) {
+          showError(phoneInput, 'Contact number must be exactly 10 digits.');
+        } else {
+          showSuccess(phoneInput);
+        }
+      });
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Check if any fields are empty first
+        if (nameInput.value.trim() === '' || companyInput.value.trim() === '' || emailInput.value.trim() === '' || phoneInput.value.trim() === '') {
+          alert('Please fill in all details.');
+          shakeElement(contactForm);
+          
+          // Trigger visual errors
+          nameInput.dispatchEvent(new Event('input'));
+          companyInput.dispatchEvent(new Event('input'));
+          emailInput.dispatchEvent(new Event('input'));
+          phoneInput.dispatchEvent(new Event('input'));
+          return;
+        }
+
+        // Trigger validations for format checking
+        nameInput.dispatchEvent(new Event('input'));
+        companyInput.dispatchEvent(new Event('input'));
+        emailInput.dispatchEvent(new Event('input'));
+        phoneInput.dispatchEvent(new Event('input'));
+
+        const invalidInputs = contactForm.querySelectorAll('.input-invalid');
+
+        if (invalidInputs.length > 0) {
+          shakeElement(contactForm);
+        } else {
+          // Success Redirect
+          window.location.href = '404.html';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
