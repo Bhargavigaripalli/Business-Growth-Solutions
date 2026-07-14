@@ -15,8 +15,11 @@ function initEyeToggles() {
   eyeToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
-      const input = toggle.parentElement.querySelector('input');
+      const wrapper = toggle.closest('.input-wrapper');
+      if (!wrapper) return;
+      const input = wrapper.querySelector('input');
       const eyeIcon = toggle.querySelector('.eye-icon');
+      if (!input || !eyeIcon) return;
       
       if (input.type === 'password') {
         input.type = 'text';
@@ -251,6 +254,7 @@ function initLoginValidation() {
   const emailInput = document.getElementById('login-email');
   const passwordInput = document.getElementById('login-password');
   const roleSelect = document.getElementById('login-role');
+  const rememberCheckbox = document.getElementById('login-remember');
   
   emailInput.addEventListener('input', () => {
     const value = emailInput.value.trim();
@@ -267,9 +271,23 @@ function initLoginValidation() {
 
   passwordInput.addEventListener('input', () => {
     const value = passwordInput.value;
+    const hasUppercase = /[A-Z]/.test(value);
+    const hasLowercase = /[a-z]/.test(value);
+    const hasNumber = /[0-9]/.test(value);
+    const hasSpecial = /[^A-Za-z0-9]/.test(value);
     
     if (value === '') {
       showError(passwordInput, 'Password is required.');
+    } else if (value.length <= 8) {
+      showError(passwordInput, 'Password must be more than 8 letters.');
+    } else if (!hasUppercase) {
+      showError(passwordInput, 'Must contain at least 1 capital letter.');
+    } else if (!hasLowercase) {
+      showError(passwordInput, 'Must contain lowercase letters.');
+    } else if (!hasNumber) {
+      showError(passwordInput, 'Must contain at least 1 number.');
+    } else if (!hasSpecial) {
+      showError(passwordInput, 'Must contain at least 1 symbol.');
     } else {
       showSuccess(passwordInput);
     }
@@ -281,10 +299,22 @@ function initLoginValidation() {
     emailInput.dispatchEvent(new Event('input'));
     passwordInput.dispatchEvent(new Event('input'));
     
+    let isRememberValid = true;
+    if (rememberCheckbox && !rememberCheckbox.checked) {
+      isRememberValid = false;
+      const checkboxLabel = rememberCheckbox.closest('.checkbox-label');
+      if (checkboxLabel) {
+        shakeElement(checkboxLabel);
+      }
+    }
+    
     const invalidInputs = loginForm.querySelectorAll('.input-invalid');
     
-    if (invalidInputs.length > 0) {
+    if (invalidInputs.length > 0 || !isRememberValid) {
       shakeElement(loginForm.closest('.auth-card'));
+      if (!isRememberValid) {
+        alert('Please check the "Remember Me" option to sign in.');
+      }
     } else {
       // Check roles select dropdown and redirect
       const role = roleSelect.value;
